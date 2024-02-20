@@ -1,0 +1,67 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: "Urbanist", sans-serif;
+}
+body{
+    padding: 5rem 10rem;
+}
+
+#main-heading{
+    color: #1e1403;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.parent-div{
+    width: 50%;
+    height: 70vh;
+    margin: auto;
+    color: #fff;
+    background: linear-gradient(to right, #514a9d, #24c6dc);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;;
+
+    border-radius: 10px;
+    position: relative;
+
+ 
+}
+
+.child{
+    width: 150px;
+    height: 70px;
+    background: linear-gradient(to right, #93edc7, #1cd8d2);
+   
+    display: grid;
+    place-content: center;
+    font-size: 32px;
+    color: #003180;
+    position: absolute;
+}
+
+
+
+.child-2{
+    top: 0;
+    right: 0;
+}
+
+.child-3{
+    bottom: 0;
+    right: 0;
+}
+
+.child-4{
+    bottom: 0;
+    left: 0;
+}
+
+.child-5{
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}

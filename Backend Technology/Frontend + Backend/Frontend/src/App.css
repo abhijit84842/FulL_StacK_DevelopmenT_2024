@@ -1,0 +1,15 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+h1{
+  margin: 10%;
+  color: blue;
+}
+p{
+    border: 2px solid black;
+    width: 15%;
+    border-style: dotted;
+}

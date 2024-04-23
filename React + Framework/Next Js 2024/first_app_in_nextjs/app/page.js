@@ -1,12 +1,16 @@
+'use client'    // use for client side rendering...
+import NewCompeEvent from "./Components/NewCompeEvent";
+
 const Page = () => {
+
+  const handleButton=(event)=>{
+   alert("Hi button Clicked")
+  }
+ 
+
   return <div className="main-container">
-    <NewComp name="Abhijit Das"/>
-    <div>This is Next Js by Abhijit 2024</div>
+    <NewCompeEvent onButton={handleButton}/>
   </div>;
 };
 export default Page;
 
-// create a new component in this page..
-const NewComp=({name})=>{
-  return <h1>Hi i am {name} </h1>
-}

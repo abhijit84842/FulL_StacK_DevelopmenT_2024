@@ -6,6 +6,10 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 export default function Home() {
   const router = useRouter();
+
+  const Navigation = (name) => {
+    router.push(name);
+  };
   return (
     <main>
       <div>
@@ -16,7 +20,8 @@ export default function Home() {
         <div>
           <Link href="/about">Go to about Page</Link>
         </div>
-        <button onClick={() => router.push("/login")}>Login Button</button>
+        <button onClick={() => Navigation("/login")}>Login Button</button>
+        <button onClick={() => Navigation("/about")}>About Button</button>
       </div>
     </main>
   );

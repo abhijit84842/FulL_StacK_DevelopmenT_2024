@@ -7,7 +7,7 @@ export function middleware(request){
     return NextResponse.redirect(new URL("/login",request.url))
 }
 
-// See "Matching Paths" below to learn more
+// See "Matching Paths" below 
 export const config = {
-    matcher: '/about/:path*',
+    matcher: ['/about/:path*' ,'/study/:path*'],        // use can use multiple path here to make this type of array
   }

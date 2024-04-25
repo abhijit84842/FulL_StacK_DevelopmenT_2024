@@ -3,7 +3,7 @@ import React from "react";
 const TeacherLogin = () => {
   return (
     <div>
-      <h1>Teacher Login Section</h1>
+      <h1>Teacher Login Page</h1>
     </div>
   );
 };

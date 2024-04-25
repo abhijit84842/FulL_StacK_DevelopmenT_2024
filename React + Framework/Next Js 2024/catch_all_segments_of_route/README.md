@@ -2,4 +2,4 @@
 
 # Cath-all-segments-of-route
 
-# 404 Page in Next.js
+# 404 Page in Next.js = create not-found.js file (Global 404 not found)

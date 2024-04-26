@@ -2,5 +2,13 @@
     color: red;
 }
 .green{
-    color: greenyellow;
+    color: green;
+}
+.black{
+    color: rgb(59, 58, 58);
+}
+
+/*  for id attribute */
+#aqua{
+    color: aqua;
 }

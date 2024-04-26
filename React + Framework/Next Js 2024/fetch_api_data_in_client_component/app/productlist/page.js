@@ -1,9 +1,14 @@
 import React from "react";
+import ProductItems from "./productitems/page";
 
-const ProductList = () => {
+const ProductList = ({ Product }) => {
+  // console.log(Product);
   return (
-    <div>
-      <h1>All Products List..</h1>
+    <div className="product-container">
+      <h1>All Product items here...</h1>
+      {Product.map((items) => (
+        <ProductItems key={items.id} items={items} />
+      ))}
     </div>
   );
 };

@@ -1,7 +1,28 @@
-import React from "react";
+"use client"
+
+import React, { useEffect, useState } from "react";
 import ProductItems from "./productitems/page";
 
-const ProductList = ({ Product }) => {
+const ProductList = () => {
+  const initialValue=[]
+  const [Product , SetProduct]=useState(initialValue)
+  // console.log(Product)
+
+
+  const handleApi=async()=>{
+    let res = await fetch("https://dummyjson.com/products");
+    let data = await res.json();
+    SetProduct(data.products)
+  }
+ 
+
+  useEffect(() => {
+    handleApi()
+
+  },[]);
+
+
+
   // console.log(Product);
   return (
     <div className="product-container">

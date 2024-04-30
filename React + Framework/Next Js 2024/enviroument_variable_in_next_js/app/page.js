@@ -2,6 +2,11 @@
 
 export default function Home() {
   // console.log(process.env.NODE_ENV)  //** *to check in which mode we are working..
+
+
+  // Use of Env variabel...
+  console.log(process.env.SERVER_PASSWORD)      
+  console.log(process.env.DB_PASSWORD)
   return (
     <main>
       <h1>Home Page......</h1>

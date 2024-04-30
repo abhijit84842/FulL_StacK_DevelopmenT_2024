@@ -8,10 +8,16 @@ const nextConfig = {
         permanent: false,
       },
       {
+        source: "/users/:userid",           // we need to use : because to understand this page is dynamic.
+        destination: "/login",
+        permanent: false,
+      },
+      {
         source: "/about",
         destination: "/",
         permanent: false,
       },
+     
     ];
   },
 };

@@ -8,4 +8,4 @@
 
 # Print indivisual user details using api data
 
-# Post Method with API
+# Post Method with Static API

@@ -9,13 +9,13 @@ export function GET(request,response){
 }
 
 
-// POST method with API
+// POST method with Static API
 export async function POST(request){
     let payload = await request.json()          // get data from user 
     console.log(payload.name)
     
     if(!payload.name || !payload.age || !payload.email){      
-        return NextResponse.json({result:"require field not found"})
+        return NextResponse.json({result:"require field not found" , success: false},{status:400})
     }
-    return NextResponse.json({result:"POST req Success.."})
+    return NextResponse.json({result:"New user Created.. ",success:true},{status:201})
 }

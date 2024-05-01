@@ -9,3 +9,5 @@
 # Print indivisual user details using api data
 
 # Post Method with Static API
+
+# 39-lecture=> Integrate Post or Call Post API

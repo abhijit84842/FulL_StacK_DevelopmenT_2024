@@ -2,4 +2,4 @@
 
 # Create api folder and keep file name route.js. in file we will keep api request related code.
 
-# Dynamic Route with API
+# Dynamic Route with API AND Show the indivisual data.

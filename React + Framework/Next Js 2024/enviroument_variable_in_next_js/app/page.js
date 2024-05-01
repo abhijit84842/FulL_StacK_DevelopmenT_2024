@@ -1,3 +1,4 @@
+import { API_BASE_URL } from "./config/constant";
 
 
 export default function Home() {
@@ -13,6 +14,10 @@ export default function Home() {
       {
         process.env.NODE_ENV=="development" ? <h2>You are in Dev Mode</h2>:<h2>You are Production Mode</h2>
       }
+
+      
+      <h1>{API_BASE_URL}</h1>
+      
     </main>
   );
 }

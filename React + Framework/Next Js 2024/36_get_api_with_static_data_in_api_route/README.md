@@ -7,3 +7,5 @@
 # Call Next js API Which create in API Route
 
 # Print indivisual user details using api data
+
+# Post Method with API

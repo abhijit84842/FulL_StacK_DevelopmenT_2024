@@ -10,11 +10,11 @@
 
 # Post Method with Static API
 
-# 39-lecture=> Integrate Post or Call Post API
+# 39-> Integrate Post or Call Post API
 
 <!.......>
 
-# 40->Leacture => Make PUT API in Next Js
+# 40-> Make PUT API in Next Js
 
 //_ Use of PUT method API.
 //_ Write PUT method in Route API file.
@@ -23,7 +23,7 @@
 
 <!.......>
 
-# 41-> Lecture => Integrate PUT Api in Next Js
+# 41-> Integrate PUT Api in Next Js
 
 // Make new route for PUT Api.
 // Make link from user list page.
@@ -33,7 +33,7 @@
 
 <!.......>
 
-# 42-> Lecture=> Make Delete API
+# 42-> Make Delete API
 
 // Make API Route function.
 //Get id from URL
@@ -42,10 +42,19 @@
 
 <!.......>
 
-# 43-> Lecture=> Integrate DELETE Api
+# 43-> Integrate DELETE Api
 
 // Make a component for delete user.
 // Why need delete component ?
 => because async and await only work in Server Component not in Client Component.
 // Call Delete Api Method
 // Test API with UI.
+
+<!.......>
+
+# 44-> Catch All API Routes
+
+// What does mean by cath-all routes?
+// Make route.
+// Write code for cath-all Route Api
+// Test Api

@@ -39,3 +39,13 @@
 //Get id from URL
 // Write code for DELETE Api
 // Test Api with POSTMAN
+
+<!.......>
+
+# 43-> Lecture=> Integrate DELETE Api
+
+// Make a component for delete user.
+// Why need delete component ?
+=> because async and await only work in Server Component not in Client Component.
+// Call Delete Api Method
+// Test API with UI.

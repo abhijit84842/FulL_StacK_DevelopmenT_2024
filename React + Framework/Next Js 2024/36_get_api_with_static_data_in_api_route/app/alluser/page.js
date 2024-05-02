@@ -1,5 +1,6 @@
 import Link from "next/link";
 import UserDetails from "./[userdetails]/page";
+import DeleteUser from "../Buttons/DeleteUser";
 
 const CallApi = async () => {
   let res = await fetch("http://localhost:3000/api/users");
@@ -21,9 +22,11 @@ const AllUser = async () => {
           <li>
             <Link href={`/alluser/${list.id}`}>{list.name}</Link>{" "}
             <br/>
+            <br/>
             <span>
               <Link href={`/alluser/${list.id}/update`}>Update</Link>
             </span>
+            <span><DeleteUser id={list.id}/></span>
           </li>
         </ul>
       ))}

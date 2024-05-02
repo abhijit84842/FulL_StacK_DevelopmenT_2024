@@ -11,3 +11,7 @@
 # Post Method with Static API
 
 # 39-lecture=> Integrate Post or Call Post API
+
+//
+
+# 40->Leacture => Make PUT API in Next Js

@@ -1,3 +1,6 @@
+
+// show indivisual data
+
 import { user } from "@/app/util/db";
 import { NextResponse } from "next/server";
 
@@ -10,4 +13,28 @@ export function GET(request,response){
     ,{status:200}) // apply condition if userData is empty Array.
 }
 
-// show indivisual data
+
+// PUT API REQUEST => To update the data in DataBase
+export async function PUT(req , res){
+    let payload= await req.json()
+    let userId=res.params.id
+
+    payload.id=userId
+
+    // console.log(payload)
+    // console.log(userId)
+
+    if(!payload.id || !payload.name || !payload.age || !payload.email){
+        return NextResponse.json({
+            return:"request data not vaild",
+            success:false
+        },{status:400})
+    }else{
+        return NextResponse.json({
+            result:payload,
+            success:true
+        },{status:200})
+    }
+
+   
+}

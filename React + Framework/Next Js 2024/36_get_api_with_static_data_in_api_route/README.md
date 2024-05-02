@@ -32,3 +32,10 @@
 // Update details and call PUT Api.
 
 <!.......>
+
+# 42-> Lecture=> Make Delete API
+
+// Make API Route function.
+//Get id from URL
+// Write code for DELETE Api
+// Test Api with POSTMAN

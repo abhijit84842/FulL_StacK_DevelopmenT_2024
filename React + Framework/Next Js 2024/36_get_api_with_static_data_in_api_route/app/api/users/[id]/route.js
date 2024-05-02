@@ -1,9 +1,11 @@
 
-// show indivisual data
+
 
 import { user } from "@/app/util/db";
+import { NEXT_BODY_SUFFIX } from "next/dist/lib/constants";
 import { NextResponse } from "next/server";
 
+// GET request Specific Id basis
 export function GET(request,response){
     // console.log(response.params.id)
     const data=user
@@ -14,7 +16,7 @@ export function GET(request,response){
 }
 
 
-// PUT API REQUEST => To update the data in DataBase
+// PUT API REQUEST Specific Id basis => To update the data in DataBase
 export async function PUT(req , res){
     let payload= await req.json()
     let userId=res.params.id
@@ -37,4 +39,17 @@ export async function PUT(req , res){
     }
 
    
+}
+
+
+// DELETE Request on Specific id basis..
+export function DELETE(request , response){
+    // console.log(response.params.id)
+    let userId = response.params.id
+    if(userId){
+        return NextResponse.json({result:"User Data Deleted " , success:true},{status:200})
+    }else{
+        return NextResponse.json({result:"Not Deleted...." , success:false},{status:400})
+    }
+  
 }

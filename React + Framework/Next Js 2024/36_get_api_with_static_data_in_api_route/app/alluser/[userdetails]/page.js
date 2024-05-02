@@ -7,7 +7,7 @@ const CallApi = async (id) => {
   return data.result;
 };
 
-const SingleUser = async ({ params }) => {
+const SingleUser = async ({ params }) => { 
   const currenId = params.userdetails;
   // console.log(currenId)
   const userData = await CallApi(currenId);

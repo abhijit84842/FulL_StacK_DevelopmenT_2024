@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 
 import { MongoClient } from "mongodb";
 
-export async function GET(request) {
+export async function GET(request,response) {
   // Replace the uri string with your connection string.
   const uri =
     "mongodb+srv://mongodb:hhSkR0HjNOnHhJhJ@cluster0.cupwun4.mongodb.net/";
@@ -25,4 +25,4 @@ export async function GET(request) {
   }
 }
 
-// run().catch(console.dir);
+

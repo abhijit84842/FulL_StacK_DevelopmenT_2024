@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 import { NextResponse } from "next/server";
 
 const url =
-"mongodb+srv://mongodb:hhSkR0HjNOnHhJhJ@cluster0.cupwun4.mongodb.net/abhijitdb?retryWrites=true&w=majority&appName=Cluster0";
+"mongodb+srv://abhijit:TqZX4zIeklDImdmb@cluster0.cupwun4.mongodb.net/abhijitdb?retryWrites=true&w=majority&appName=Cluster0";
 // GET Api method
 export async function GET(request, response) {
 

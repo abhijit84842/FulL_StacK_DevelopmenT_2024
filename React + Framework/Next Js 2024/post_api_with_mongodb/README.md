@@ -9,3 +9,11 @@
 - Get data from API Request
 - Save product data in MongoDB
 - Test Api with Postman.
+
+# Integrated add Product with API
+
+- Make link and page to add the Product
+- Make input fields for adding Products.
+- Use state to get input field data.
+- Call API to add product.
+- Test API and data in MongoDB Collection.

@@ -14,7 +14,7 @@ export async function GET(request, response) {
     await mongoose.connect(url);
     console.log("DATABASE Connected Successfully......");
     data = await Product.find();
-    console.log(data);
+    // console.log(data);
   } catch (error) {
     console.log("not connected...");
   }

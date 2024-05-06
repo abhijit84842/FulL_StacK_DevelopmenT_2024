@@ -17,3 +17,10 @@
 - Use state to get input field data.
 - Call API to add product.
 - Test API and data in MongoDB Collection.
+
+# Show Product List from MongoDB
+
+- Make link and page for the product list
+- Re-Create Product list API
+- Get product data with API
+- Display product list

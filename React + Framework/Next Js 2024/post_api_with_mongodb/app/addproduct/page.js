@@ -16,7 +16,15 @@ const AddProduct = () => {
     let result = await res.json();
     if (result.success) {
       alert("New product Added Successfully..");
+    }else{
+      alert("Product Not added..")
     }
+    setName("")
+    setPrice("")
+    setCompany("")
+    setColor("")
+
+
   };
 
   return (

@@ -28,6 +28,20 @@ const UpdateProduct = ({ params }) => {
     CallApi(singleProductId);
   }, []);
 
+  const handleUpdate = async () => {
+    let res = await fetch(
+      `http://localhost:3000/api/products/${singleProductId}`,
+      {
+        method: "PUT",
+        body: JSON.stringify({ name, price, company, color }),
+      }
+    );
+    let result = await res.json();
+    if (result.success) {
+      alert("Updated Successfully..");
+    }
+  };
+
   return (
     <div>
       <h1>Product Update Section....</h1>
@@ -52,7 +66,7 @@ const UpdateProduct = ({ params }) => {
         value={color}
         onChange={(event) => setColor(event.target.value)}
       />
-      <button>Update</button>
+      <button onClick={() => handleUpdate()}>Update</button>
       <Link href="/products">Back</Link>
     </div>
   );

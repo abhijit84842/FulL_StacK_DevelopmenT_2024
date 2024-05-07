@@ -1,12 +1,13 @@
 import Link from "next/link";
 import { GET } from "../api/products/route";
+import DeleteButton from "../buttons/DeleteButton";
 
 const CallApi = async () => {
   // let res = await fetch("http://localhost:3000/api/products");   // NOT WORKING Here...
-  let res = await GET("http://localhost:3000/api/products");
+  let res = await GET("http://localhost:3000/api/products" , { cache: "no-store" });      // add cache object 
   let data = await res.json();
   // console.log(data)
-  return data.result;
+  return data.result; 
 };
 
 const Products = async () => {
@@ -23,7 +24,7 @@ const Products = async () => {
             <td>Price</td>
             <td>Company</td>
             <td>Color</td>
-            <td>Update</td>
+            
           </tr>
         </thead>
         <tbody>
@@ -34,6 +35,7 @@ const Products = async () => {
               <td>{item.company}</td>
               <td>{item.color}</td>
               <td><Link href={`/products/${item._id}`}>Edit</Link></td>
+              <td><DeleteButton productId={item._id}/></td>
             </tr>
           ))}
         </tbody>

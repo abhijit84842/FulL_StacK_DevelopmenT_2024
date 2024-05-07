@@ -30,6 +30,7 @@ export async function GET(req, res){
   let singleProId=res.params.productid
   const recordId= {_id:singleProId}
   // console.log(recordId)
+  
     // connect with database
     const url =
     "mongodb+srv://abhijit:TqZX4zIeklDImdmb@cluster0.cupwun4.mongodb.net/abhijitdb?retryWrites=true&w=majority&appName=Cluster0";

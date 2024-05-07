@@ -23,15 +23,17 @@ const Products = async () => {
             <td>Price</td>
             <td>Company</td>
             <td>Color</td>
+            <td>Update</td>
           </tr>
         </thead>
         <tbody>
           {productlist.map((item) => (
-            <tr key={item.id}>
+            <tr key={item._id}>
               <td>{item.name} </td>
               <td>{item.price}</td>
               <td>{item.company}</td>
               <td>{item.color}</td>
+              <td><Link href={`/products/${item._id}`}>Edit</Link></td>
             </tr>
           ))}
         </tbody>

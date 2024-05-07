@@ -30,3 +30,12 @@
 - Make a new API route for PUT method
 - Write code for updating the product
 - Test API with Postman
+
+# Populated Form data with API
+
+- Make API to get a single record.
+- Make Route for editing the product.
+- Add input fields for edit product
+- Declear state for adding values in input fields.
+- Call API and display data
+- Test API with POSTMAN

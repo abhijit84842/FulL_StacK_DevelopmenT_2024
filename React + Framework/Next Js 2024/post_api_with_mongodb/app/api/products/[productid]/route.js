@@ -8,7 +8,7 @@ export async function PUT(request, response) {
   const filter= {_id:productId}
 
   const payload = await request.json()
-  console.log(payload)
+//   console.log(payload)
   
   // connect with database
   const url =
@@ -19,3 +19,6 @@ export async function PUT(request, response) {
 
   return NextResponse.json({ result: data, success: true });
 }
+
+
+// Write API code for single product update.

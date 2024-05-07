@@ -4,7 +4,7 @@ import DeleteButton from "../buttons/DeleteButton";
 
 const CallApi = async () => {
   // let res = await fetch("http://localhost:3000/api/products");   // NOT WORKING Here...
-  let res = await GET("http://localhost:3000/api/products" , { cache: "no-store" });      // add cache object 
+  let res = await GET("http://localhost:3000/api/products" , { cache: "no-cache"});      // add cache object 
   let data = await res.json();
   // console.log(data)
   return data.result; 

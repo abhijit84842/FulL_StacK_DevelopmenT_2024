@@ -1,6 +1,6 @@
 # Connect with DB using mongoose.
 
-// GET APi call to fetch data from database.
+- GET APi call to fetch data from database.
 
 # Save Data in DB with POST API
 
@@ -39,3 +39,11 @@
 - Declear state for adding values in input fields.
 - Call API and display data
 - Test API with POSTMAN
+
+# Delete API with MongoDB
+
+- Make API in delete product.
+- Test API with Postman.
+- Integrate DELETE API with UI
+- Add no cashe in GET Api
+- Test data with MongoDB

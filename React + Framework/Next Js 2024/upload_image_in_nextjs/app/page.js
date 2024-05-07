@@ -2,33 +2,23 @@
 import { useState } from "react";
 
 export default function Home() {
-
-
-
   const [file, setFile] = useState();
 
-
-
-  const onUpload = async(event) => {
+  const onUpload = async (event) => {
     event.preventDefault(); // to avoid auto reload page and bydefault submit on form
     // console.log(file);
-    const data= new FormData()
-    data.set('file' , file)
-    let result= await fetch("api/upload",{
-      method:"POST",
-      body:data
-    })
+    const data = new FormData();
+    data.set("file", file);
+    let result = await fetch("api/upload", {
+      method: "POST",
+      body: data,
+    });
 
-    result=await result.json()
-    console.log(result)
-    if(result.success){
-      alert("file uploaded..")
+    result = await result.json();
+    console.log(result);
+    if (result.success) {
+      alert("file uploaded..");
     }
-
-
-
-
-     
   };
   return (
     <main>

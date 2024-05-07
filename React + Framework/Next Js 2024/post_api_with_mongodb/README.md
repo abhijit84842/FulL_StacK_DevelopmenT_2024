@@ -24,3 +24,9 @@
 - Re-Create Product list API
 - Get product data with API
 - Display product list
+
+# PUT API(update) MongoDB
+
+- Make a new API route for PUT method
+- Write code for updating the product
+- Test API with Postman

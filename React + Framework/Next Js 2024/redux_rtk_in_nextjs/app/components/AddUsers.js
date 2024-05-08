@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addUserAction } from "../reduxtoolkit/slice";
+import { UserAction } from "../reduxtoolkit/slice";
 
 const AddUsers = () => {
   // declear the component state.
@@ -10,8 +10,11 @@ const AddUsers = () => {
   const dispatch = useDispatch();     // hooks to dispatch the action
 
   const handleDispatch = () => {
-    dispatch(addUserAction.addUser(name))   // action dispatch 
+    dispatch(UserAction.addUser(name))   // action dispatch 
+    setName("")
   };
+
+
 
   return (
     <div className="adduser-main">
@@ -19,6 +22,7 @@ const AddUsers = () => {
       <div className="input-field">
         <input
           type="text"
+          value={name}
           onChange={(event) => setName(event.target.value)}
           placeholder="enter name"
         />

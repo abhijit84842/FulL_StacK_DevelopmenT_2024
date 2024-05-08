@@ -33,3 +33,10 @@
 
 - import useSelector hook
 - Display list of users
+
+# Remove data from Redux
+
+- Make action for remove data in slice
+- Make remove button to del user
+- Call Action on Button Click
+- Write Logic to Remove data from redux

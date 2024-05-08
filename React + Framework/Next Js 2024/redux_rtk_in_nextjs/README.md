@@ -46,3 +46,10 @@
 - Make Page in Next js
 - Make Link for page
 - Get data from redux
+
+# Redux with Local Storage.
+
+- Why need Redux with Local Storage
+- Store Redux data in Local Storage.
+- Get data from Local Storage to Redux Storage
+- Test Flow.

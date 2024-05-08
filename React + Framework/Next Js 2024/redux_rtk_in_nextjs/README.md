@@ -22,3 +22,14 @@
 - Use Dispatch hook for send data in Action.
 
 - Check data in Slice
+
+# Redux Dev Tools
+
+- Make of Redux Dev Tools
+- Check stored data in redux
+- Check Action with dev tool
+
+# Get data from Redux to Next Js
+
+- import useSelector hook
+- Display list of users

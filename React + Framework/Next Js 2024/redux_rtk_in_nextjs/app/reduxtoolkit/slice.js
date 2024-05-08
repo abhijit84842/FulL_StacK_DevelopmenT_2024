@@ -10,7 +10,7 @@ const Slice = createSlice({
   reducers: {
     addUser: (state, action) => {
         // console.log(action)
-        console.log(state)
+        // console.log(state)
       const data = {
         id: nanoid(),
         name: action.payload,

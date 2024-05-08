@@ -40,3 +40,9 @@
 - Make remove button to del user
 - Call Action on Button Click
 - Write Logic to Remove data from redux
+
+# Redux data between pages.
+
+- Make Page in Next js
+- Make Link for page
+- Get data from redux

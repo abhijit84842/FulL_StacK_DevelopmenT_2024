@@ -53,3 +53,10 @@
 - Store Redux data in Local Storage.
 - Get data from Local Storage to Redux Storage
 - Test Flow.
+
+# Make Secound Slice
+
+- Define initial state.
+- Make Slice
+- Add Reducer
+- Check flow

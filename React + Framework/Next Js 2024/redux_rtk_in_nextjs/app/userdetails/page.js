@@ -4,7 +4,9 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 export const UserDetails = () => {
-    const userData=useSelector((store)=>store.users)
+    const userData=useSelector((store)=>store.UserSlice.users)
+    console.log(userData)
+    
    
 
   return (
@@ -12,7 +14,7 @@ export const UserDetails = () => {
       <h1>Userdetails in Page ..</h1>
       {
         userData.map((item)=>(
-            <ul>
+            <ul key={item.id}>
                 <li>{item.id}</li>
             </ul>
         ))

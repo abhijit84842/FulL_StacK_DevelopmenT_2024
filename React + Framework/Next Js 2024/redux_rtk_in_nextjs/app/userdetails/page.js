@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 
 export const UserDetails = () => {
     const userData=useSelector((store)=>store.UserSlice.users)
-    console.log(userData)
+    // console.log(userData)
     
    
 

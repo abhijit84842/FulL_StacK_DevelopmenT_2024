@@ -60,3 +60,10 @@
 - Make Slice
 - Add Reducer
 - Check flow
+
+# useSelector and useDispattch in same component.
+
+- Make UI element
+- Set data to redux store.
+- get data from redux store
+- display data on UI

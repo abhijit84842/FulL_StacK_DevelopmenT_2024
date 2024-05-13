@@ -9,6 +9,8 @@ export default function Home() {
       <AddUsers/>
       <DisplayUsers/>
       <Link href="/userdetails">See User Id</Link>
+      <br></br>
+      <Link href="/apiusers">Go to API User List page</Link>
     </main>
   );
 }

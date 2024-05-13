@@ -67,3 +67,10 @@
 - Set data to redux store.
 - get data from redux store
 - display data on UI
+
+# API Call with Redux Toolkit
+
+- Make page for diplay API data
+- Make API call in slice
+- Make reducer for API call
+- Display API data on UI

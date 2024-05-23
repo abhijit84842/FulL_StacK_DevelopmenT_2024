@@ -54,21 +54,25 @@ const fs = require('node:fs');
 
 // Unlink or delete the file...
 // fs.unlink(path, callback)
-fs.unlink("./copy file/unlink.txt" , (err)=>{
-    if(err){
-        console.error(err)
-    }else{
-        console.log("File Deleted Successfully....")
-    }
-})
+// fs.unlink("./copy file/unlink.txt" , (err)=>{
+//     if(err){
+//         console.error(err)
+//     }else{
+//         console.log("File Deleted Successfully....")
+//     }
+// })
 
-// Delete the folder..
-// fs.rmdir(path[, options], callback)
 
-fs.unlink("./copy file/unlink.txt" , (err)=>{
+
+
+
+
+// delete folder..
+// fs.rm(path[, options], callback)
+fs.rm("./del folder" , {recursive: true},(err)=>{
     if(err){
-        console.error(err)
+        console.error(err.message)
     }else{
-        console.log("File Deleted Successfully....")
+        console.log("Folder Deleted Successfully....")
     }
 })

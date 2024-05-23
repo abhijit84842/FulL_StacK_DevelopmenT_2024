@@ -64,3 +64,11 @@ fs.unlink("./copy file/unlink.txt" , (err)=>{
 
 // Delete the folder..
 // fs.rmdir(path[, options], callback)
+
+fs.unlink("./copy file/unlink.txt" , (err)=>{
+    if(err){
+        console.error(err)
+    }else{
+        console.log("File Deleted Successfully....")
+    }
+})

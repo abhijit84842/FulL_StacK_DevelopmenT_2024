@@ -1,7 +1,13 @@
-const fs=require("fs")
-console.log("Core Module(Non-Global) and Global(Third-party module) ")          // console is the global module , so no need to import console
+// File system Module
 
+// fs.writeFile(file, data[, options], callback)
 
-// Core module or Non global Module
-fs.writeFileSync("hi")
+const fs = require('node:fs');
+fs.writeFile("hello.txt" , "this is file system module", (err)=>{
+    if(err){
+        console.log("not created")
+    }else{
+        console.log("Successfully Created..")
+    }
+})
 

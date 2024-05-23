@@ -1,3 +1,7 @@
 // Working with modules.
 // File system operations.
-// understanding HTTP module.
+
+- write file
+- append file
+- rename file
+  // understanding HTTP module.

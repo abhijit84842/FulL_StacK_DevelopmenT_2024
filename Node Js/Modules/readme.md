@@ -4,4 +4,7 @@
 - write file
 - append file
 - rename file
+
+* copy file
+* unlink file
   // understanding HTTP module.

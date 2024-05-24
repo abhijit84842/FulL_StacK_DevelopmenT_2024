@@ -1,0 +1,11 @@
+{
+  "name": "modules",
+  "version": "1.0.0",
+  "description": "// Working with modules.\r // File system operations.\r // understanding HTTP module.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "abhijit das",
+  "license": "ISC"
+}

@@ -58,6 +58,18 @@ app.get("/api/jokes", (req, res) => {
   res.send(jokes)
 });
 
+// create a about route..
+app.use("/about", (req , res , next)=>{
+    return next(new Error("Something went wrong...Check it first"))         // this err will show in backend..
+})
+
+
+// express js error handler...
+app.use((err , req , res , next)=>{
+    console.error(err.stack)
+    res.status(500).send("Something went wrong...")     // this err will show in frontend...
+})
+
 app.listen(3000 , ()=>{
     console.log("Port set => " +3000)
 })

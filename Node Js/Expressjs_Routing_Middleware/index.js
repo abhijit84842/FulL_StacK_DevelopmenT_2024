@@ -2,6 +2,18 @@ const express = require("express");
 
 const app = express();
 
+// create  Middleware.... 
+app.use((req , res , next)=>{
+    console.log("middleware running...")
+    next()      // forword the request
+})
+
+// We can also create multiple middleware..
+app.use((req , res , next)=>{
+    console.log("2nd middleware running....")
+    next()       // forword the request
+})
+
 // create API Routes...
 app.get("/", (req, res) => {
   res.send("Server is ready...");

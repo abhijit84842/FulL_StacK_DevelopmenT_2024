@@ -36,11 +36,16 @@ app.get("/api/jokes", (req, res) => {
       title: "A jokes",
       content: " This is a jokes",
     },
+    {
+        id: 6,
+        title: "A jokes",
+        content: " This is a jokes",
+      },
   ];
 
   res.send(jokes)
 });
 
 app.listen(3000 , ()=>{
-    console.log("Port set " +3000)
+    console.log("Port set => " +3000)
 })

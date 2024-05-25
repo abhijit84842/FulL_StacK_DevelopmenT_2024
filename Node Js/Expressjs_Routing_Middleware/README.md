@@ -7,6 +7,8 @@
 
 \* Routing
 
+\* Middleware.
+
 \* Request and response handling
 
 \* Error Handling

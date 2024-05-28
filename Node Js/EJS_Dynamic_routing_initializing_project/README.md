@@ -1,3 +1,15 @@
+// setting up parsers for form
+
+- express.json()
+- express.urlencoded()
+- Setup ejs as a for view engine
+
+// Setting up EJS pages
+
+- install EJS package from npm
+
+// setting up public static files
+
 // Initializing the project with npm
 
 - express install
@@ -6,9 +18,3 @@
 
 - intro of dynamic routing
 - how to get data comming from frontend at backend route
-
-// setting up parsers for form
-
-// Setting up EJS pages
-
-// setting up public static files

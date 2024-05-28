@@ -18,6 +18,14 @@ app.get("/", (req, res) => {
   res.send("server is running....");
 });
 
+// use of Dynamic Routes => :
+app.get("/profile/:username" , (req,res)=>{
+  // console.log(req.params.username)
+  const name= req.params.username
+  res.send("Dynamic route is Running.."+ name)
+  
+})
+
 // create a another route..
 app.get("/about", (req, res) => {
   res.render("about");

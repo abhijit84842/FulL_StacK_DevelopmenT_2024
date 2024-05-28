@@ -10,6 +10,8 @@
 
 // setting up public static files
 
+- use CSS , javascript etc as a public static files
+
 // Initializing the project with npm
 
 - express install

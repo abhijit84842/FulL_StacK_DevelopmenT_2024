@@ -20,26 +20,19 @@
       </div>
       <div class="tasks ml-10 mt-10 flex gap-5 p-10 ">
 
-        <div class="task hidden  w-72 rounded-md bg-zinc-500 p-3">
-          <h2>Some task here..</h2>
-          <a class="text-blue-800" href="">See More....</a>
+      <!-- ejs apply -->
+      <% if(files.length > 0){ %>
+        <% files.forEach(function(val){ %>
+          <div class="task  w-72 rounded-md bg-zinc-500 p-3">
+            <h2>Some task here..</h2>
+            <a class="text-blue-800" href="">See More....</a>
+          </div>
 
-        </div>
+          <% }) %>
 
-        <div class="task hidden  w-72 rounded-md bg-zinc-500 p-3">
-          <h2>Some task here..</h2>
-          <a class="text-blue-800" href="">See More....</a>
-
-        </div>
-
-        <div class="task hidden  w-72 rounded-md bg-zinc-500 p-3">
-          <h2>Some task here..</h2>
-          <a class="text-blue-800" href="">See More....</a>
-        </div>
-
-        <h2 class="text-slate-50"> No Task yet....</h2>
-
-
+        <%  } else{ %>
+          <h2 class="text-slate-50"> No Task yet....</h2>
+        <% } %>
       </div>
     </div>
 

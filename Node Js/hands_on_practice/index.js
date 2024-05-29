@@ -27,6 +27,19 @@ app.get("/about", (req, res) => {
   });
 });
 
+// for post request...
+app.post("/create" , (req ,res)=>{
+  // console.log(req.body)
+
+  // create file using fs module ****
+  fs.writeFile(`./files/${req.body.title.split(' ').join(' ')}.txt` , req.body.details , (err)=>{
+    // console.log(err.message)
+
+    res.redirect("/about")
+  })
+
+})
+
 app.listen(3000, () => {
   console.log("Port number is => " + 3000);
 });

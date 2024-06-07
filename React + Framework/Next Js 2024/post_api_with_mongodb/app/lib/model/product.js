@@ -10,4 +10,4 @@ const productModel =new mongoose.Schema({
 
 })
 
-export const Product =mongoose.models.products || mongoose.model("products",productModel)   // database name and model name
+export const Product =mongoose.models.products || mongoose.model("products",productModel)   // database table name and model name

@@ -1,9 +1,9 @@
+import { urlStr } from "@/app/lib/connectionStr";
 import { Product } from "@/app/lib/model/product";
 import mongoose from "mongoose";
 import { NextResponse } from "next/server";
 
-const url =
-"mongodb+srv://abhijit:TqZX4zIeklDImdmb@cluster0.cupwun4.mongodb.net/abhijitdb?retryWrites=true&w=majority&appName=Cluster0";
+const url =urlStr
 // GET Api method
 export async function GET(request, response) {
 
@@ -14,7 +14,7 @@ export async function GET(request, response) {
     await mongoose.connect(url);
     console.log("DATABASE Connected Successfully......");
     data = await Product.find();
-    // console.log(data);
+    console.log(data);
   } catch (error) {
     console.log("not connected...");
   }

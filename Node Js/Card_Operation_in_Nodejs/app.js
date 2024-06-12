@@ -30,10 +30,8 @@ app.get("/create", async (req, res) => {
   res.send(data);
 });
 
-
-
 // Update Operation => model.findOneAndUpdate({_id or name etc} , {update} , {new:true})
-app.get("/update" ,async (req,res)=>{
+app.get("/update", async (req, res) => {
   try {
     await mongoose.connect(
       "mongodb+srv://abhijitbackend:abhijit84842@cluster0.l4vqt9f.mongodb.net/flipkartDB?retryWrites=true&w=majority&appName=Cluster0"
@@ -42,14 +40,49 @@ app.get("/update" ,async (req,res)=>{
   } catch (err) {
     console.log("not connected....");
   }
- const UpdateUser= await userModel.findOneAndUpdate({email:"akash524@gmail.com"} , {name:"Akashdip Mota"} , {new:true})
+  const UpdateUser = await userModel.findOneAndUpdate(
+    { email: "akash524@gmail.com" },
+    { name: "Akashdip Mota" },
+    { new: true }
+  );
 
- res.send(UpdateUser)
+  res.send(UpdateUser);
+});
+
+// Read Operation
+
+app.get("/read", async (req, res) => {
+  try {
+    await mongoose.connect(
+      "mongodb+srv://abhijitbackend:abhijit84842@cluster0.l4vqt9f.mongodb.net/flipkartDB?retryWrites=true&w=majority&appName=Cluster0"
+    );
+    console.log("DB connected successfully....");
+  } catch (err) {
+    console.log("not connected....");
+  }
+  const users = await userModel.find(); // read all users...
+
+  const singleUser = await userModel.findOne({ email: "ayanmuni74@gmail.com" });    // to read single user
+   res.send(users)
+  // res.send(singleUser);
+});
+
+
+// DELETE Opration => it have 3 method 1)findOneAndDelete() 2) deleteOne() 3)deleteMany()
+app.get("/delete" , async (req,res)=>{
+
+  try {
+    await mongoose.connect(
+      "mongodb+srv://abhijitbackend:abhijit84842@cluster0.l4vqt9f.mongodb.net/flipkartDB?retryWrites=true&w=majority&appName=Cluster0"
+    );
+    console.log("DB connected successfully....");
+  } catch (err) {
+    console.log("not connected....");
+  }
+
+  const delUser=await userModel.findOneAndDelete({name:"Akashdip Mota"} ,{acknowledged:true})
+  res.send(delUser)
 })
-
-
-
-
 
 app.listen(3000, () => {
   console.log(`App server is Running PORT=>${3000}`);

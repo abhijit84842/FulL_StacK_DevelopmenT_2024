@@ -8,4 +8,4 @@ const userSchema= mongoose.Schema({
     age:String
 })
 
-module.exports= mongoose.model("userdetails",userSchema)        /// collection name and model name
+module.exports= mongoose.model("userdetails",userSchema)        /// collection name and Schema name

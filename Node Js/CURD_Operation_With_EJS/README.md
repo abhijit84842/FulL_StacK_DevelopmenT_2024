@@ -10,3 +10,5 @@
 - res.render("index")
 
 // Use Tailwind CSS to make UI
+
+// Create User Model

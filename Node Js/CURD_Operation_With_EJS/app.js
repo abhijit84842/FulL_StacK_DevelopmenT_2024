@@ -2,6 +2,10 @@ const express= require("express")
 
 const path= require("path")
 
+// common js import.. Model
+const userModel= require("./models/usermodel")
+const { default: mongoose } = require("mongoose")
+
 const app=express()
 
 // to read the json data comming from frontend
@@ -25,6 +29,26 @@ app.get("/", (req,res)=>{
 // rendering the page
 app.get("/read", (req,res)=>{
     res.render("read")
+})
+
+// Create Operation
+app.post("/create", async(req,res)=>{
+    // console.log(res.body)
+
+    let {name , email , age}=req.body           // destructing the data
+    try{
+        await mongoose.connect("mongodb+srv://abhijitbackend:abhijit84842@cluster0.l4vqt9f.mongodb.net/flipkartDB?retryWrites=true&w=majority&appName=Cluster0")
+        console.log("Data base connected successfully..")
+    }catch(err){
+        console.log("DB not connected...")
+    }
+
+    const result= await userModel.create({
+        name,
+        email,
+        age
+    })
+    res.send(result)
 })
 
 

@@ -33,9 +33,9 @@ app.get("/read", (req,res)=>{
 
 // Create Operation
 app.post("/create", async(req,res)=>{
-    // console.log(res.body)
+    // console.log(req.body)
 
-    let {name , email , age}=req.body           // destructing the data
+    let {name , email , age ,imageurl}=req.body           // destructing the data
     try{
         await mongoose.connect("mongodb+srv://abhijitbackend:abhijit84842@cluster0.l4vqt9f.mongodb.net/flipkartDB?retryWrites=true&w=majority&appName=Cluster0")
         console.log("Data base connected successfully..")
@@ -46,9 +46,10 @@ app.post("/create", async(req,res)=>{
     const result= await userModel.create({
         name,
         email,
-        age
+        age,
+        imageurl
     })
-    res.send(result)
+    res.send({result,success:true})
 })
 
 

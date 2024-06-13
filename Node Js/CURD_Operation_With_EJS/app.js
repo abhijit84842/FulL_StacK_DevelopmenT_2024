@@ -64,6 +64,45 @@ app.get("/read",async (req,res)=>{
 })
 
 
+
+// Read Single User
+// Read Operation
+app.get("/update/:id" ,async (req,res)=>{           // to show data in input field
+    // console.log(req.params.id)
+    currentIdUpdate= req.params.id
+
+    try{
+        await mongoose.connect("mongodb+srv://abhijitbackend:abhijit84842@cluster0.l4vqt9f.mongodb.net/flipkartDB?retryWrites=true&w=majority&appName=Cluster0")
+        console.log("Database Connected successfully....")
+    }catch(err){
+        console.log("DB not connected...")
+    }
+
+    let user=await userModel.findOne({_id:currentIdUpdate})
+
+
+    res.render("update",{user})
+})
+
+
+// Update Single User...
+app.post("/create/:id",async (req,res)=>{
+    // console.log(req.params)
+    userId=req.params.id
+    // console.log(req.body)
+    let {name ,email ,age , imageurl} = req.body
+    try{
+        await mongoose.connect("mongodb+srv://abhijitbackend:abhijit84842@cluster0.l4vqt9f.mongodb.net/flipkartDB?retryWrites=true&w=majority&appName=Cluster0")
+        console.log("Atlas connected..")
+    }catch(err){
+        console.log("not connected...")
+    }
+
+    const updatedUser=await userModel.findOneAndUpdate({_id:userId},{name:name, email:email , age:age , imageurl:imageurl } , {new:true})
+
+    res.redirect("/read")
+})
+
 // DELETE Operation ..
 app.get("/delete/:id", async (req,res)=>{
     // console.log(req.params.id)

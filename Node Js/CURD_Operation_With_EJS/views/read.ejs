@@ -30,7 +30,9 @@
         <p class="text-white pl-2"><%= list.email%></p>
         <p class="text-white pl-2"><%= list.age%></p>
         <div class="flex gap-3 mt-10 mb-6 ml-5 pb-5">
-          <a class="text-blue-300 font-bold" href="">Edit User</a>
+          <a class="text-blue-300 font-bold" href="/update/<%=list._id %>"
+            >Edit User</a
+          >
           <a class="text-red-500 font-bold" href="/delete/<%=list._id %>"
             >Delete User</a
           >

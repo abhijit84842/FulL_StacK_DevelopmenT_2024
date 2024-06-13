@@ -14,3 +14,8 @@
 // Create User Model
 
 // Perform CURD Operation
+
+- Create
+- Update
+- Read
+- Delete

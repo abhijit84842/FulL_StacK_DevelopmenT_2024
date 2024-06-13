@@ -26,10 +26,7 @@ app.get("/", (req,res)=>{
     res.render("index")
 })
 
-// rendering the page
-app.get("/read", (req,res)=>{
-    res.render("read")
-})
+
 
 // Create Operation
 app.post("/create", async(req,res)=>{
@@ -49,9 +46,22 @@ app.post("/create", async(req,res)=>{
         age,
         imageurl
     })
-    res.send({result,success:true})
+    res.redirect("/")
 })
 
+
+// rendering the page
+// Read Opeartion.....
+app.get("/read",async (req,res)=>{
+    try{
+        await mongoose.connect("mongodb+srv://abhijitbackend:abhijit84842@cluster0.l4vqt9f.mongodb.net/flipkartDB?retryWrites=true&w=majority&appName=Cluster0")
+        console.log("Database Connected successfully....")
+    }catch(err){
+        console.log("DB not connected...")
+    }
+    let userDetails=await userModel.find()
+    res.render("read",{userDetails})
+})
 
 // PORT Number
 app.listen(3000,()=>{

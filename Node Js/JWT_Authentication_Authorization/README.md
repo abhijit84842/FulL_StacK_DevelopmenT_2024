@@ -8,3 +8,7 @@
 // SET Cookie
 
 - npm i cookie-parser => to see cookie str in backed.
+
+// bcrypt
+
+- npm i bcrypt => to make the secure password

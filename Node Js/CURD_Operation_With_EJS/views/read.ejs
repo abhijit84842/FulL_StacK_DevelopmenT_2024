@@ -15,7 +15,7 @@
     </div>
     <!--User Card-->
     <div class="flex gap-3 flex-wrap mt-10">
-      <% userDetails.forEach(function(list){ %>
+      <% if(userDetails.length >0){ %> <% userDetails.forEach(function(list){ %>
       <div
         class="userone max-w-64 bg-zinc-500 ml-20 pt-5 rounded-md overflow-hidden"
       >
@@ -37,7 +37,9 @@
         </div>
       </div>
 
-      <% }) %>
+      <% }) %> <% }else{ %>
+      <h3 class="text-white ml-20 font-semibold">No Users Yet..</h3>
+      <% }%>
     </div>
   </body>
 </html>

@@ -12,3 +12,9 @@
 // bcrypt
 
 - npm i bcrypt => to make the secure password
+
+// JWT
+
+- npm i jsonwebtoken
+- jwt.sing()
+- jswt.verify()

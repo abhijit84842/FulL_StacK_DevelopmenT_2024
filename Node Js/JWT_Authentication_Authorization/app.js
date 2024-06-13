@@ -1,6 +1,11 @@
+const cookieParser = require("cookie-parser")
 const express= require("express")
 
 const app= express()
+
+// to read the cookie str in backend..
+app.use(cookieParser())
+
 
 app.get("/",(req,res)=>{
     // set cookie in browser
@@ -10,6 +15,8 @@ app.get("/",(req,res)=>{
 
 
 app.get("/read",(req,res)=>{
+
+    // console.log(req.cookies)    // to see the cookie which is comming from browser.
     res.send("hi")
 })
 

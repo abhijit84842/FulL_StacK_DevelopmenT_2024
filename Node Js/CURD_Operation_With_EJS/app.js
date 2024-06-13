@@ -63,6 +63,23 @@ app.get("/read",async (req,res)=>{
     res.render("read",{userDetails})
 })
 
+
+// DELETE Operation ..
+app.get("/delete/:id", async (req,res)=>{
+    // console.log(req.params.id)
+    currentId= req.params.id
+    try{
+        await mongoose.connect("mongodb+srv://abhijitbackend:abhijit84842@cluster0.l4vqt9f.mongodb.net/flipkartDB?retryWrites=true&w=majority&appName=Cluster0")
+        console.log("Database Connected successfully....")
+    }catch(err){
+        console.log("DB not connected...")
+    }
+
+    let delUser=await userModel.findOneAndDelete({_id:currentId})
+    res.redirect("/read")
+
+})
+
 // PORT Number
 app.listen(3000,()=>{
     console.log("Server is Running in POsrt => "+ 3000)

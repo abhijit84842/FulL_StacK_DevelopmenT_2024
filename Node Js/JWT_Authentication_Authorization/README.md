@@ -17,4 +17,4 @@
 
 - npm i jsonwebtoken
 - jwt.sing()
-- jswt.verify()
+- jwt.verify()

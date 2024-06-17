@@ -9,17 +9,22 @@
   <body>
     <div class="w-full h-screen bg-zinc-900">
       <h1 class="text-5xl text-white font-semibold flex justify-center py-5">
-        Login Section
+        Login Your Account
       </h1>
+      <div>
+        <a
+          class="bg-red-500 inline ml-20 font-semibold text-white p-2 rounded-md"
+          href="/"
+          >Back</a
+        >
+      </div>
 
       <div class="bg-zinc-500 mt-10 mx-72 h-auto">
-        <form class="flex flex-col gap-5 mx-20 pt-10" action="">
-          <input
-            class="p-2 rounded-md"
-            type="text"
-            name="name"
-            placeholder="enter your name"
-          />
+        <form
+          class="flex flex-col gap-5 mx-20 pt-10"
+          action="/login"
+          method="post"
+        >
           <input
             class="p-2 rounded-md"
             type="text"

@@ -70,7 +70,32 @@ app.get("/login", (req,res)=>{
 })
 
 // login and check Authantication 
-app.post("/login" , (req,res)=>{
+app.post("/login" , async (req,res)=>{
+    // console.log(req.body)
+    // let {email , password}= req.body
+
+    try{
+        await mongoose.connect(url)
+
+    }catch(err){
+        console.log("DB not connected")
+    }
+    // check email exists or not in db
+    let user=await UserModel.findOne({email:req.body.email})
+    if(!user){
+        return res.send("some thing went wrong")
+    }else{
+        // compare the user enterd password
+        bcrypt.compare(req.body.password, user.password, function(err, result) {
+            // result == true
+            if(result){
+                console.log("Successfully login")
+            }else{
+                console.log("password is incorrect")
+            }
+        });
+    }
+
     res.render("login")
 })
 

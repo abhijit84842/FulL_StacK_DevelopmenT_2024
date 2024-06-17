@@ -65,6 +65,14 @@ app.post("/accreate" , (req,res)=>{
 })
 
 
+// logout by removing the token
+app.get("/logout" , (req,res)=>{
+    res.cookie("token" , "")        // blank the token value
+    res.redirect("/")
+})
+
+
+
 app.listen(3000,()=>{
     console.log("Port number is => "+3000)
 })

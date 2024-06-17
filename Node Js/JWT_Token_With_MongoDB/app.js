@@ -2,6 +2,7 @@ const express = require("express")
 const path =require('path')
 const cookieParser= require('cookie-parser')
 const { default: mongoose } = require("mongoose")
+const bcrypt= require('bcrypt')
 
 const UserModel= require("./models/userModel")
 
@@ -32,20 +33,30 @@ app.get("/" , (req,res)=>{
     res.render("index")
 })
 
-app.post("/accreate",async (req,res)=>{  
+app.post("/accreate" , (req,res)=>{  
     // console.log(req.body)
     const {name ,age ,email, password}= req.body
-
-    try{
-        await mongoose.connect(url)
-        console.log("DB connected Successfully....")
-    }catch(err){
-        console.log("DB not connected....")
-    }
-
-    let result=await UserModel.create({name , age , email , password}) 
     
-    res.redirect("/")
+
+    // make salt to encrypte password
+    bcrypt.genSalt(10, (err,salt)=>{
+        bcrypt.hash(password, salt ,async(err, hash)=>{         // makeing hash
+            // console.log(hash)
+
+            try{
+                await mongoose.connect(url)
+                console.log("DB connected Successfully....")
+            }catch(err){
+                console.log("DB not connected....")
+            }
+        
+            let result=await UserModel.create({name , age , email , password: hash })
+            
+            res.redirect("/")
+        })
+    })
+    
+    
 })
 
 

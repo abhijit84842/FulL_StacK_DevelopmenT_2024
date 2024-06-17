@@ -64,6 +64,15 @@ app.post("/accreate" , (req,res)=>{
     
 })
 
+//
+app.get("/login", (req,res)=>{
+    res.render("login")
+})
+
+// login and check Authantication 
+app.post("/login" , (req,res)=>{
+    res.render("login")
+})
 
 // logout by removing the token
 app.get("/logout" , (req,res)=>{

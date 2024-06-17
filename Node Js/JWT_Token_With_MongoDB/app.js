@@ -3,6 +3,7 @@ const path =require('path')
 const cookieParser= require('cookie-parser')
 const { default: mongoose } = require("mongoose")
 const bcrypt= require('bcrypt')
+const jwt=require("jsonwebtoken")
 
 const UserModel= require("./models/userModel")
 
@@ -51,6 +52,10 @@ app.post("/accreate" , (req,res)=>{
             }
         
             let result=await UserModel.create({name , age , email , password: hash })
+
+            // set cookie in client web browser using jwt token
+            const token=jwt.sign({email:email}, "secret")
+            res.cookie("token" ,token)
             
             res.redirect("/")
         })

@@ -1,6 +1,9 @@
 const express = require("express")
 const path =require('path')
 const cookieParser= require('cookie-parser')
+const { default: mongoose } = require("mongoose")
+
+const UserModel= require("./models/userModel")
 
 const app =express()
 
@@ -21,10 +24,28 @@ app.set("view engine" , "ejs")
 // to see the cookie str inbackend
 app.use(cookieParser())
 
+// connection str of MongoDB
+const url="mongodb+srv://abhijitbackend:abhijit84842@cluster0.l4vqt9f.mongodb.net/JwtAuthDB?retryWrites=true&w=majority&appName=Cluster0"
 
+//
+app.get("/" , (req,res)=>{
+    res.render("index")
+})
 
-app.get("/",(req,res)=>{
-    res.send("server running...")
+app.post("/accreate",async (req,res)=>{  
+    // console.log(req.body)
+    const {name ,age ,email, password}= req.body
+
+    try{
+        await mongoose.connect(url)
+        console.log("DB connected Successfully....")
+    }catch(err){
+        console.log("DB not connected....")
+    }
+
+    let result=await UserModel.create({name , age , email , password}) 
+    
+    res.redirect("/")
 })
 
 

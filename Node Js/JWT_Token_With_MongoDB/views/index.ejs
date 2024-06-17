@@ -4,6 +4,48 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JWT Token</title>
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body></body>
+  <body>
+    <div class="w-full h-screen bg-zinc-900">
+      <h1 class="text-white flex justify-center font-semibold text-5xl">
+        Create Your Account..
+      </h1>
+      <div class="bg-zinc-500 h-auto py-5 mt-10 mx-72 rounded-md">
+        <form
+          class="flex flex-col px-20 gap-5"
+          action="/accreate"
+          method="post"
+        >
+          <input
+            class="py-2 pl-5 rounded-md"
+            type="text"
+            name="name"
+            placeholder="enter name"
+          />
+          <input
+            class="py-2 pl-5 rounded-md"
+            type="text"
+            name="age"
+            placeholder="enter age"
+          />
+          <input
+            class="py-2 pl-5 rounded-md"
+            type="text"
+            name="email"
+            placeholder="enter email"
+          />
+          <input
+            class="py-2 pl-5 rounded-md"
+            type="text"
+            name="password"
+            placeholder="enter password"
+          />
+          <button class="w-2/4 py-2 ml-52 bg-red-500 rounded-md" type="submit">
+            Create
+          </button>
+        </form>
+      </div>
+    </div>
+  </body>
 </html>

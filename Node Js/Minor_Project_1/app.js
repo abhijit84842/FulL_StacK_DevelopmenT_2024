@@ -1,6 +1,7 @@
 const express = require("express");
 const path = require("path");
 const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 
 // import models
 const userModel = require("./models/usermodel");
@@ -61,10 +62,15 @@ app.post("/create", async (req, res) => {
         password: hash,
         age,
       });
+
+      // jwt authentication.....
+      const token = jwt.sign({ email: email, userid: userData._id }, "secret");
+      res.cookie("token", token);
+      res.send("Successfully Registerd..");
     });
   });
 
-  res.render("index");
+  //   res.render("index");
 });
 
 app.listen(3000, () => {

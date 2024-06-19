@@ -1,6 +1,10 @@
 const express = require('express')
 const path =require('path')
 
+// import models
+const userModel= require('./models/usermodel')
+
+
 const app = express()
 
 // json

@@ -33,6 +33,10 @@ app.get("/user/create", (req, res) => {
   res.render("registerd");
 });
 
+app.get("/user/login" , (req, res)=>{
+    res.render("login")
+})
+
 // POST API for User ac Create
 app.post("/create", async (req, res) => {
   // console.log(req.body)

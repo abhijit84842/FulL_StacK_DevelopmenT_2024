@@ -43,15 +43,22 @@ app.post("/create", async (req, res) => {
       // mongodb connect
       try {
         await mongoose.connect(url);
-        console.log("DB connected Successfully")
+        console.log("DB connected Successfully");
       } catch (err) {
         console.log("DB not connected");
       }
+
+      // check user exists or not in db basis on email id
+      let user = await userModel.findOne({ email: email });
+      if (user) {
+        return res.status(500).send("user already registered");
+      }
+
       const userData = await userModel.create({
         username,
         name,
         email,
-        password:hash,
+        password: hash,
         age,
       });
     });

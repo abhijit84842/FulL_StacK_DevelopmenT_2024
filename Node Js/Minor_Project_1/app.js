@@ -1,5 +1,7 @@
 const express = require("express");
 const path = require("path");
+const bcrypt = require("bcrypt");
+
 // import models
 const userModel = require("./models/usermodel");
 const { default: mongoose } = require("mongoose");
@@ -34,19 +36,27 @@ app.get("/user/create", (req, res) => {
 app.post("/create", async (req, res) => {
   // console.log(req.body)
   let { username, name, email, password, age } = req.body;
-  // mongodb connect
-  try {
-    await mongoose.connect(url);
-  } catch (err) {
-    console.log("DB not connected");
-  }
-  const userData = await userModel.create({
-    username,
-    name,
-    email,
-    password,
-    age,
+
+  // password encryption
+  bcrypt.genSalt(10, (err, salt) => {
+    bcrypt.hash(password, salt, async (err, hash) => {
+      // mongodb connect
+      try {
+        await mongoose.connect(url);
+        console.log("DB connected Successfully")
+      } catch (err) {
+        console.log("DB not connected");
+      }
+      const userData = await userModel.create({
+        username,
+        name,
+        email,
+        password:hash,
+        age,
+      });
+    });
   });
+
   res.render("index");
 });
 

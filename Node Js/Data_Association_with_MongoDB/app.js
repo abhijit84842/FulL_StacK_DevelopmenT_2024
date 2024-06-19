@@ -26,6 +26,8 @@ app.get("/" , (req,res)=>{
     res.send("hi")
 })
 
+
+// user details...
 app.get("/create",async(req,res)=>{
 
     try{
@@ -46,6 +48,23 @@ app.get("/create",async(req,res)=>{
     res.send(userData)
 
  
+})
+
+// post create
+app.get("/post/create" , async (req , res)=>{
+    try{
+        await mongoose.connect(url)
+        console.log("DB Connected Successfully..")
+    }catch(err){
+        console.log("DB not connected...")
+    }
+
+  let postData =  await postModel.create({
+        postdata:"This is first Post",
+        user: "66727a49e044a1621c3b0250"           
+    })
+
+    res.send(postData)
 })
 
 app.listen(3000,()=>{

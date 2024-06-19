@@ -64,11 +64,7 @@ app.get("/post/create" , async (req , res)=>{
         postdata:"This is first Post",
         user: "66727a49e044a1621c3b0250"           
     },
-    {
-       postdata: "This is secound Post",
-       user:"66727a49e044a1621c3b0250"
-
-    }
+  
 )
 
     let userData = await userModel.findOne({_id:"66727a49e044a1621c3b0250"})

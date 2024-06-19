@@ -27,6 +27,12 @@ app.get("/",(req,res)=>{
     res.render("index")
 })
 
+app.get("/user/create", (req,res)=>{
+    res.render("registerd")
+})
+
+
+// POST API for User ac Create
 app.post("/create" ,async (req,res)=>{
     //mongodb connect
     try{
@@ -37,6 +43,7 @@ app.post("/create" ,async (req,res)=>{
     const userData=await userModel.create({})
     res.send(userData)
 })
+
 
 app.listen(3000,()=>{
     console.log("PORT=> "+3000)

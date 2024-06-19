@@ -4,8 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body>
-    <h1>Home Page</h1>
+  <body class="w-full h-screen bg-zinc-900">
+    <h1 class="text-white flex justify-center text-5xl font-semibold my-20">
+      Home Page
+    </h1>
+    <div class="flex justify-center">
+      <div class="flex justify-center gap-5">
+        <span
+          class="bg-green-500 p-5 rounded-md text-white text-xl font-semibold"
+        >
+          <a href="/user/create">Registred</a></span
+        >
+        <span
+          class="bg-blue-500 p-5 rounded-md text-white text-xl font-semibold"
+        >
+          <a href="/user/login">Login</a></span
+        >
+      </div>
+    </div>
   </body>
 </html>

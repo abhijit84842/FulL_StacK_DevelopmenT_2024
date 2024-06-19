@@ -27,7 +27,7 @@ app.get("/" , (req,res)=>{
 })
 
 
-// user details...
+// create user....
 app.get("/create",async(req,res)=>{
 
     try{
@@ -59,14 +59,26 @@ app.get("/post/create" , async (req , res)=>{
         console.log("DB not connected...")
     }
 
+    // post create using postmodel...
   let postData =  await postModel.create({
         postdata:"This is first Post",
         user: "66727a49e044a1621c3b0250"           
-    })
+    },
+    {
+       postdata: "This is secound Post",
+       user:"66727a49e044a1621c3b0250"
 
-    res.send(postData)
+    }
+)
+
+    let userData = await userModel.findOne({_id:"66727a49e044a1621c3b0250"})
+    userData.posts=postData._id
+    await userData.save()
+
+    res.send({postData, userData})
+   
 })
-
+ 
 app.listen(3000,()=>{
     console.log("PORT=> "+ 3000)
 })

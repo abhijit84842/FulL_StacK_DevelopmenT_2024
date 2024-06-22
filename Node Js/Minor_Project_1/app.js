@@ -97,10 +97,20 @@ app.post("/login", async (req, res) => {
     if (!result) {
       return res.status(500).send("something went wrong");
     }
+
+    // if user found then set cookie again
+    let token = jwt.sign({ email: user.email }, "secrectlogin");
+    res.cookie("token", token);
+
     res.send("login successfully");
   });
 });
 
+// logout
+app.get("/logout", (req, res) => {
+  res.cookie("token", "");
+  res.redirect("/");
+});
 app.listen(3000, () => {
   console.log("PORT=> " + 3000);
 });

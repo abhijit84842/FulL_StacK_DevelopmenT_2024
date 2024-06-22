@@ -33,9 +33,9 @@ app.get("/user/create", (req, res) => {
   res.render("registerd");
 });
 
-app.get("/user/login" , (req, res)=>{
-    res.render("login")
-})
+app.get("/user/login", (req, res) => {
+  res.render("login");
+});
 
 // POST API for User ac Create
 app.post("/create", async (req, res) => {
@@ -75,6 +75,30 @@ app.post("/create", async (req, res) => {
   });
 
   //   res.render("index");
+});
+
+// Post API for User Login
+app.post("/login", async (req, res) => {
+  let { email, password } = req.body;
+  // console.log(email , password)
+  try {
+    await mongoose.connect(url);
+    console.log("db connected");
+  } catch (err) {
+    console.log("db not connected..");
+  }
+  let user = await userModel.findOne({ email: email });
+  if (!user) {
+    return res.status(500).send("Something went wrong...");
+  }
+
+  // if user found then check the password
+  bcrypt.compare(password, user.password, (err, result) => {
+    if (!result) {
+      return res.status(500).send("something went wrong");
+    }
+    res.send("login successfully");
+  });
 });
 
 app.listen(3000, () => {

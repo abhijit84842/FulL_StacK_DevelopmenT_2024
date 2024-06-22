@@ -4,8 +4,30 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body>
-    <h1>This is My Profile</h1>
+  <body class="bg-stone-900 w-full h-screen">
+    <h1 class="flex justify-center text-5xl text-white font-semibold my-10">
+      Abhijit Das
+    </h1>
+
+    <div class="flex justify-center gap-2">
+      <img
+        class="w-32 rounded-full"
+        src="https://i.pinimg.com/originals/cc/23/b2/cc23b24496664f876a8f0ccfa8d06163.jpg"
+        alt="loading..."
+      />
+      <div class="h-10 mt-32">
+        <a class="text-lg text-white font-semibold" href="#">Change</a>
+      </div>
+    </div>
+    <div class="bg-stone-500 mt-5 mx-10 p-1"></div>
+    <div class="text-white text-xl flex justify-center gap-32 p-1">
+      <span><a href="#">New Feed</a></span>
+      <span><a href="#">My Post</a></span>
+      <span><a href="#">About</a></span>
+      <span><a href="#">Video</a></span>
+      <span><a href="#">Reels</a></span>
+    </div>
   </body>
 </html>

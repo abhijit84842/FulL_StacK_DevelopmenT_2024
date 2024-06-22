@@ -120,8 +120,15 @@ app.get("/logout", (req, res) => {
 });
 
 // profile route(protected route)
-app.get("/profile", isLoggedIn, (req, res) => {
-  console.log(req.user1)
+app.get("/profile", isLoggedIn, async(req, res) => {
+  // console.log(req.user1)
+  try{
+    await mongoose.connect(url)
+  }catch(err){
+    console.log(err.message)
+  }
+  let data= await userModel.findOne({email:req.user1.email})
+  // console.log(data)
   res.render("profile");
 });
 

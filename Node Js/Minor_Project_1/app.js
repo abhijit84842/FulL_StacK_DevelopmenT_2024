@@ -2,6 +2,7 @@ const express = require("express");
 const path = require("path");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const cookieParser = require("cookie-parser");
 
 // import models
 const userModel = require("./models/usermodel");
@@ -15,6 +16,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 // for static file
 app.use(express.static(path.join(__dirname, "public")));
+
+// to see the cookie in backend
+app.use(cookieParser());
 
 // set view engine
 app.set("view engine", "ejs");
@@ -99,7 +103,10 @@ app.post("/login", async (req, res) => {
     }
 
     // if user found then set cookie again
-    let token = jwt.sign({ email: user.email }, "secrectlogin");
+    let token = jwt.sign(
+      { email: user.email, userid: user._id },
+      "secrectlogin"
+    );
     res.cookie("token", token);
 
     res.send("login successfully");
@@ -111,6 +118,24 @@ app.get("/logout", (req, res) => {
   res.cookie("token", "");
   res.redirect("/");
 });
+
+// profile route(protected route)
+app.get("/profile", isLoggedIn, (req, res) => {
+  console.log(req.user1)
+  res.render("profile");
+});
+
+// middleware for protected route...
+function isLoggedIn(req, res, next) {
+  // console.log(req.cookies.token)
+  if (req.cookies.token === "") {
+    return res.status(500).send("You have to login first");
+  }
+  let data = jwt.verify(req.cookies.token, "secrectlogin");
+  // console.log(data)
+  req.user1 = data;   // make a filed in req and add data.
+  next();
+}
 app.listen(3000, () => {
   console.log("PORT=> " + 3000);
 });

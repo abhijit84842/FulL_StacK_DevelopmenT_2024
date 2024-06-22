@@ -15,3 +15,5 @@
 - postmodel
 
 // Styling for => Use Taildwine Css
+
+// Middleware for protected route..

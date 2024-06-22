@@ -109,7 +109,7 @@ app.post("/login", async (req, res) => {
     );
     res.cookie("token", token);
 
-    res.send("login successfully");
+    res.redirect("/profile");
   });
 });
 
@@ -129,7 +129,7 @@ app.get("/profile", isLoggedIn, (req, res) => {
 function isLoggedIn(req, res, next) {
   // console.log(req.cookies.token)
   if (req.cookies.token === "") {
-    return res.status(500).send("You have to login first");
+    return res.status(500).redirect("/user/login");
   }
   let data = jwt.verify(req.cookies.token, "secrectlogin");
   // console.log(data)

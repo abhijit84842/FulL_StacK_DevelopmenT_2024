@@ -1,4 +1,6 @@
-// Mini Project 1 => Data Association with mongoDB
+<h1>Social Media App </h1>
+
+// Mini Project 1 =>Data Association with mongoDB
 
 // Plan Making to make this project
 

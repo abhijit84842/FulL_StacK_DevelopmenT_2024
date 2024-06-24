@@ -62,29 +62,15 @@
       My Posts
     </h1>
     <div class="postcontainer flex justify-center flex-col p-5">
+      <%=user.posts._v %> <% user.posts.forEach(function(post){ %>
       <div
         class="post border-1 w-1/3 border-[1px] rounded-md bg-zinc-900 text-white p-5 mb-5"
       >
-        <h4 class="text-blue-500 text-xl">@UserName</h4>
-        <p>
-          mjjaeda ieifaf njhkdsf jkhnjsdf jnsjf jknkldsf ddfdsfdfdfsd dfgsgsgsgg
-          dgdggg gfgfgfgfgg fggfgg fgffh fhfh sfsf
-          jhdjhffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-          jddddddddddddddddddddb iddddddddddddddddddddd jjdfffffffffffffffff
-        </p>
+        <h4 class="text-blue-500 text-xl">sgsgg</h4>
+        <p>fdfgdg</p>
       </div>
 
-      <div
-        class="post border-1 w-1/3 border-[1px] rounded-md bg-zinc-900 text-white p-5"
-      >
-        <h4 class="text-blue-500 text-xl">@UserName</h4>
-        <p>
-          mjjaeda ieifaf njhkdsf jkhnjsdf jnsjf jknkldsf ddfdsfdfdfsd dfgsgsgsgg
-          dgdggg gfgfgfgfgg fggfgg fgffh fhfh sfsf
-          jhdjhffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-          jddddddddddddddddddddb iddddddddddddddddddddd jjdfffffffffffffffff
-        </p>
-      </div>
+      <% }) %>
     </div>
   </body>
 </html>

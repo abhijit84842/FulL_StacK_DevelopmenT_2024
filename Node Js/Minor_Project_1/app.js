@@ -161,6 +161,8 @@ app.post("/post", isLoggedIn,  async(req,res)=>{
   await user.save()
 
   // console.log(user.posts)
+  
+  res.redirect("/profile")
   res.render("profile" ,{user})
   // user.posts.push(post_.id)
 })

@@ -127,9 +127,9 @@ app.get("/profile", isLoggedIn, async(req, res) => {
   }catch(err){
     console.log(err.message)
   }
-  let data= await userModel.findOne({email:req.user1.email})
-  // console.log(data)
-  res.render("profile");
+  let user= await userModel.findOne({email:req.user1.email})
+  // console.log(user)
+  res.render("profile", {user});  // send user data in profile page
 });
 
 // middleware for protected route...

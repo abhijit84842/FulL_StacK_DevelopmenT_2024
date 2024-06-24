@@ -7,6 +7,7 @@ const cookieParser = require("cookie-parser");
 // import models
 const userModel = require("./models/usermodel");
 const { default: mongoose } = require("mongoose");
+const postModel = require("./models/postmodel");
 
 const app = express();
 
@@ -131,6 +132,37 @@ app.get("/profile", isLoggedIn, async(req, res) => {
   // console.log(user)
   res.render("profile", {user});  // send user data in profile page
 });
+
+
+
+// Post Creation
+app.post("/post", isLoggedIn,  async(req,res)=>{
+  // console.log(req.user1)
+  // console.log(req.body)
+
+  let {content}= req.body
+
+  
+  try{
+    await mongoose.connect(url)
+    
+  }catch(err){
+    console.log("not connected")
+  }
+  let user =await userModel.findOne({email:req.user1.email})    // check user exists or not
+  // console.log(user)
+  
+  let post=await postModel.create({
+    user:user._id,
+    content,
+  })
+  user.posts=post._id
+  await user.save()
+
+  // console.log(user.posts)
+  res.render("profile" ,{user})
+  // user.posts.push(post_.id)
+})
 
 // middleware for protected route...
 function isLoggedIn(req, res, next) {

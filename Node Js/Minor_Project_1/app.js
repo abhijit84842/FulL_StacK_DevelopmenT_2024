@@ -128,10 +128,9 @@ app.get("/profile", isLoggedIn, async(req, res) => {
   }catch(err){
     console.log(err.message)
   }
-  let user= await userModel.findOne({email:req.user1.email})
-  // console.log(user)
-
-  user.populate("posts")      // not showing post id show only post content
+  let user= await userModel.findOne({email:req.user1.email}).populate("posts")      // popolate() => not showing post id show only post content
+  console.log(user)
+    
   res.render("profile", {user});  // send user data in profile page
 });
 
@@ -161,7 +160,7 @@ app.post("/post", isLoggedIn,  async(req,res)=>{
   user.posts.push(post._id)   
   await user.save()
 
-  console.log(user.posts)
+  // console.log(user.posts)
   res.render("profile" ,{user})
   // user.posts.push(post_.id)
 })

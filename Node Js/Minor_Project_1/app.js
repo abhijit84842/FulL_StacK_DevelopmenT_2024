@@ -192,7 +192,7 @@ app.get("/like/:id", isLoggedIn,async (req,res)=>{
 
 
 // Edit Feature...GET Method
-app.get("/edit/:id",async(req , res)=>{
+app.get("/edit/:id", isLoggedIn,async(req , res)=>{
   // console.log(req.params)
   try{
     await mongoose.connect(url)
@@ -205,7 +205,21 @@ app.get("/edit/:id",async(req , res)=>{
  res.render("update" , {post})
 })
 
+// Edit feature .....POST request
+app.post("/update/:id", isLoggedIn ,async (req, res)=>{
+  // console.log(req.params)
+  // console.log(req.body)
+  try{
+    await mongoose.connect(url)
 
+  }catch(err){
+    console.log("Db not connected..")
+  }
+
+  let post=await postModel.findOneAndUpdate({_id:req.params.id}, {content:req.body.content} ,{new:true})
+  // console.log(post)
+  res.redirect("/profile")
+})
 
 
 // middleware for protected route...

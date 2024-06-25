@@ -129,7 +129,7 @@ app.get("/profile", isLoggedIn, async(req, res) => {
     console.log(err.message)
   }
   let user= await userModel.findOne({email:req.user1.email}).populate("posts")      // popolate() => not showing post id show only post content
-  console.log(user)
+  // console.log(user)
     
   res.render("profile", {user});  // send user data in profile page
 });
@@ -166,6 +166,25 @@ app.post("/post", isLoggedIn,  async(req,res)=>{
   res.render("profile" ,{user})
   // user.posts.push(post_.id)
 })
+
+
+// like Api Route
+app.get("/like/:id", isLoggedIn,async (req,res)=>{
+  // console.log(req.params.id)
+  // console.log(req.user1.userid)
+  try{
+    await mongoose.connect(url)
+  }catch(err){
+    console.log("DB not connected...")
+  }
+  let post= await postModel.findOne({_id:req.params.id}).populate("user")
+  // console.log(post)
+  post.likes.push(req.user1.userid)
+  await post.save()
+  res.redirect("/profile")
+})
+
+
 
 // middleware for protected route...
 function isLoggedIn(req, res, next) {

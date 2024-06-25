@@ -191,6 +191,22 @@ app.get("/like/:id", isLoggedIn,async (req,res)=>{
 })
 
 
+// Edit Feature...GET Method
+app.get("/edit/:id",async(req , res)=>{
+  // console.log(req.params)
+  try{
+    await mongoose.connect(url)
+  }
+  catch(err){
+    console.log("DB not connected")
+  }
+ let post=await postModel.findOne({_id:req.params.id}).populate("user")
+//  console.log(post)
+ res.render("update" , {post})
+})
+
+
+
 
 // middleware for protected route...
 function isLoggedIn(req, res, next) {

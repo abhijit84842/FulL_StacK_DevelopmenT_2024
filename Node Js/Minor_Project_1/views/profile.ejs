@@ -68,6 +68,9 @@
       >
         <h4 class="text-blue-500"><%=user.username %></h4>
         <p class="bg-zinc-800 rounded-md p-5"><%=post.content %></p>
+        <small class="mt-2 inline-block bg-blue-800 rounded-full p-1">
+          <%=post.likes.length %> likes</small
+        >
         <div class="text-xl flex gap-5 mt-5">
           <a class="text-red-300" href="/like/<%= post._id %>">Like</a>
           <a class="text-blue-500" href="/edit/<%= post._id %>">Edit</a>

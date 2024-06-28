@@ -3,6 +3,7 @@ const path = require("path");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const cookieParser = require("cookie-parser");
+const upload = require("./config/multerconfig");
 
 // import models
 const userModel = require("./models/usermodel");
@@ -121,109 +122,112 @@ app.get("/logout", (req, res) => {
 });
 
 // profile route(protected route)
-app.get("/profile", isLoggedIn, async(req, res) => {
+app.get("/profile", isLoggedIn, async (req, res) => {
   // console.log(req.user1)
-  try{
-    await mongoose.connect(url)
-  }catch(err){
-    console.log(err.message)
+  try {
+    await mongoose.connect(url);
+  } catch (err) {
+    console.log(err.message);
   }
-  let user= await userModel.findOne({email:req.user1.email}).populate("posts")      // popolate() => not showing post id show only post content
+  let user = await userModel
+    .findOne({ email: req.user1.email })
+    .populate("posts"); // popolate() => not showing post id show only post content
   // console.log(user)
-    
-  res.render("profile", {user});  // send user data in profile page
+
+  res.render("profile", { user }); // send user data in profile page
 });
 
-
-
 // Post Creation
-app.post("/post", isLoggedIn,  async(req,res)=>{
+app.post("/profile/post", isLoggedIn, async (req, res) => {
   // console.log(req.user1)
   // console.log(req.body)
 
-  let {content}= req.body
+  let { content } = req.body;
 
-  
-  try{
-    await mongoose.connect(url)
-    
-  }catch(err){
-    console.log("not connected")
+  try {
+    await mongoose.connect(url);
+  } catch (err) {
+    console.log("not connected");
   }
-  let user =await userModel.findOne({email:req.user1.email})    // check user exists or not
+  let user = await userModel.findOne({ email: req.user1.email }); // check user exists or not
   // console.log(user)
-  
-  let post=await postModel.create({
-    user:user._id,
+
+  let post = await postModel.create({
+    user: user._id,
     content,
-  })
-  user.posts.push(post._id)   
-  await user.save()
+  });
+  user.posts.push(post._id);
+  await user.save();
 
   // console.log(user.posts)
-  
-  res.redirect("/profile")
-  res.render("profile" ,{user})
-  // user.posts.push(post_.id)
-})
 
+  res.redirect("/profile");
+  // user.posts.push(post_.id)
+});
 
 // like Api Route
-app.get("/like/:id", isLoggedIn,async (req,res)=>{
+app.get("/like/:id", isLoggedIn, async (req, res) => {
   // console.log(req.params.id)
   // console.log(req.user1.userid)
-  try{
-    await mongoose.connect(url)
-  }catch(err){
-    console.log("DB not connected...")
+  try {
+    await mongoose.connect(url);
+  } catch (err) {
+    console.log("DB not connected...");
   }
-  let post= await postModel.findOne({_id:req.params.id}).populate("user")
+  let post = await postModel.findOne({ _id: req.params.id }).populate("user");
   // console.log(post)
 
-  if(post.likes.indexOf(req.user1.userid)=== -1){
-    post.likes.push(req.user1.userid)
-  }else{
-    post.likes.splice(post.likes.indexOf(req.user1.userid), 1)
+  if (post.likes.indexOf(req.user1.userid) === -1) {
+    post.likes.push(req.user1.userid);
+  } else {
+    post.likes.splice(post.likes.indexOf(req.user1.userid), 1);
   }
-  
-  await post.save()
-  res.redirect("/profile")
-})
 
+  await post.save();
+  res.redirect("/profile");
+});
 
 // Edit Feature...GET Method
-app.get("/edit/:id", isLoggedIn,async(req , res)=>{
+app.get("/edit/:id", isLoggedIn, async (req, res) => {
   // console.log(req.params)
-  try{
-    await mongoose.connect(url)
+  try {
+    await mongoose.connect(url);
+  } catch (err) {
+    console.log("DB not connected");
   }
-  catch(err){
-    console.log("DB not connected")
-  }
- let post=await postModel.findOne({_id:req.params.id}).populate("user")
-//  console.log(post)
- res.render("update" , {post})
-})
+  let post = await postModel.findOne({ _id: req.params.id }).populate("user");
+  //  console.log(post)
+  res.render("update", { post });
+});
 
 // Edit feature .....POST request
-app.post("/update/:id", isLoggedIn ,async (req, res)=>{
+app.post("/update/:id", isLoggedIn, async (req, res) => {
   // console.log(req.params)
   // console.log(req.body)
-  try{
-    await mongoose.connect(url)
-
-  }catch(err){
-    console.log("Db not connected..")
+  try {
+    await mongoose.connect(url);
+  } catch (err) {
+    console.log("Db not connected..");
   }
 
-  let post=await postModel.findOneAndUpdate({_id:req.params.id}, {content:req.body.content} ,{new:true})
+  let post = await postModel.findOneAndUpdate(
+    { _id: req.params.id },
+    { content: req.body.content },
+    { new: true }
+  );
   // console.log(post)
-  res.redirect("/profile")
-})
-
+  res.redirect("/profile");
+});
 
 // profile pic upload...
+app.get("/profile/changepic", (req, res) => {
+  res.render("profilepic");
+});
 
+//
+app.post("/profile/upload", (req, res) => {
+  // res.render("profile")
+});
 
 // middleware for protected route...
 function isLoggedIn(req, res, next) {
@@ -233,7 +237,7 @@ function isLoggedIn(req, res, next) {
   }
   let data = jwt.verify(req.cookies.token, "secrectlogin");
   // console.log(data)
-  req.user1 = data;   // make a filed in req and add data.
+  req.user1 = data; // make a filed in req and add data.
   next();
 }
 app.listen(3000, () => {

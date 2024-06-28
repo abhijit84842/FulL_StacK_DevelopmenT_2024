@@ -219,14 +219,25 @@ app.post("/update/:id", isLoggedIn, async (req, res) => {
   res.redirect("/profile");
 });
 
-// profile pic upload...
+// profile pic upload...(change button)
 app.get("/profile/changepic", (req, res) => {
   res.render("profilepic");
 });
 
 //
-app.post("/profile/upload", (req, res) => {
-  // res.render("profile")
+app.post("/profile/upload", upload.single("image"), isLoggedIn, async(req, res) => {
+  // console.log(req.file.filename)
+  // console.log(req.user1.userid)
+  try{
+    await mongoose.connect(url)
+  }catch(err){
+    console.log("db not connected")
+  }
+  let user= await userModel.findOneAndUpdate({ _id: req.user1.userid} , {profilepic:req.file.filename}, {new:true})
+  console.log(user)
+
+  
+  res.redirect("/profile")
 });
 
 // middleware for protected route...

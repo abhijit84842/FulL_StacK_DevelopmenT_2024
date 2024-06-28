@@ -19,3 +19,8 @@
 // Styling for => Use Taildwine Css
 
 // Middleware for protected route..
+
+<h2>Upload profile pic using Multer </h2>
+* install Multer from npm 
+* install crypto from npm => to set the unic name
+* install path to set the orginal file name

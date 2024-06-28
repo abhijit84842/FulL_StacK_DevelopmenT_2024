@@ -18,16 +18,29 @@
       </span>
     </div>
 
-    <div class="flex justify-center gap-2">
+    <div class="h-44 w-52 mx-[50%] flex">
       <img
-        class="w-32 rounded-full"
-        src="https://i.pinimg.com/originals/cc/23/b2/cc23b24496664f876a8f0ccfa8d06163.jpg"
-        alt="loading..."
+        class="w-32 h-32 object-cover rounded-full p-2"
+        src="/images/uploads/<%=user.profilepic %>"
+        alt="loading.."
       />
-      <div class="h-10 mt-32">
-        <a class="text-lg text-white font-semibold" href="#">Change</a>
-      </div>
+      <span class="font-semibold text-white mt-28">
+        <a href="#">Change</a>
+      </span>
     </div>
+    <!-- <div class="bg-blue-500 flex justify-center">
+      <div class="flex justify-center gap-2 bg-red-300 w-1/6">
+        <img
+          class="bg-blue-500"
+          src="./public/images/uploads/<%= user.profilepic %>"
+          alt="loading..."
+        />
+        <div class="h-10 mt-32 bg-stone-300">
+          <a class="text-lg text-white font-semibold" href="#">Change</a>
+        </div>
+      </div>
+    </div> -->
+
     <div class="bg-stone-500 w-2/4 h-auto mt-10 ml-20 rounded-md">
       <span
         class="text-xl text-red-500 font-semibold pl-5 underline-offset-auto"

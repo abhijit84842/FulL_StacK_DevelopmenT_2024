@@ -222,6 +222,9 @@ app.post("/update/:id", isLoggedIn ,async (req, res)=>{
 })
 
 
+// profile pic upload...
+
+
 // middleware for protected route...
 function isLoggedIn(req, res, next) {
   // console.log(req.cookies.token)

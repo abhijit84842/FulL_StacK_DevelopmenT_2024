@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="w-full h-screen bg-zinc-900">
+    <h1 class="text-white text-5xl flex justify-center font-semibold my-10">
+      Login Your Account
+    </h1>
+    <span
+      ><a class="bg-red-500 text-white text-none ml-20 p-2 rounded-md" href="/"
+        >Home</a
+      ></span
+    >
+    <div class="flex justify-center">
+      <div class="mt-10 w-1/4 h-auto bg-zinc-500 rounded-md">
+        <span class="flex justify-center text-xl font-semibold text-red-400"
+          >login section</span
+        >
+        <form class="flex flex-col gap-5 p-5" action="/login" method="post">
+          <input
+            class="p-2 rounded-md outline-none"
+            type="text"
+            name="email"
+            required
+            placeholder="enter your email id"
+          />
+          <input
+            class="p-2 rounded-md outline-none"
+            type="text"
+            name="password"
+            required
+            placeholder="enter password"
+          />
+
+          <button
+            class="bg-green-500 text-white font-semibold inline w-32 ml-24 p-2 rounded-md"
+            type="submit"
+          >
+            login
+          </button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

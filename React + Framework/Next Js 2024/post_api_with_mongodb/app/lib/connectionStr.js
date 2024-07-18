@@ -1,0 +1,1 @@
+export const urlStr=`mongodb+srv://${process.env.USER_NAME}:${process.env.PASSWORD}@cluster0.l4vqt9f.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority&appName=Cluster0`

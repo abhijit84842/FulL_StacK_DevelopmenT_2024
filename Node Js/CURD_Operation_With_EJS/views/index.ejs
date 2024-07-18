@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CURD Operation</title>
+
+    <link rel="stylesheet" href="/stylesheet/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="w-full h-full bg-zinc-900">
+      <h1 class="text-white flex justify-center pt-10 text-5xl font-semibold">
+        Curd Operation with EJS
+      </h1>
+      <div class="nav text-red-500 ml-20">
+        <a href="/read">See User</a>
+      </div>
+
+      <div class="mt-20 ml-20">
+        <form class="flex gap-5" action="/create" method="Post">
+          <input
+            class="border-2 border-zinc-50 p-5 rounded-md"
+            type="text"
+            name="name"
+            placeholder="enter name.."
+          />
+          <input
+            class="border-2 border-zinc-50 p-5 rounded-md"
+            type="text"
+            name="email"
+            placeholder="enter email.."
+          />
+          <input
+            class="border-2 border-zinc-50 p-5 rounded-md"
+            type="text"
+            name="age"
+            placeholder="enter age"
+          />
+          <input
+            class="border-2 border-zinc-50 p-5 rounded-md"
+            type="text"
+            name="imageurl"
+            placeholder="enter imageurl"
+          />
+          <button
+            class="h-10 w-20 bg-blue-700 text-white font-bold rounded-md"
+            type="submit"
+          >
+            Add User
+          </button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

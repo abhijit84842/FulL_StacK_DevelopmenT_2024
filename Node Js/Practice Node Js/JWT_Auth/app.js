@@ -6,6 +6,9 @@ const { default: mongoose } = require("mongoose");
 
 const userModel = require("./models/usermodel");
 
+const jwt = require("jsonwebtoken");
+const bcrypt = require("bcrypt");
+
 const app = express();
 
 app.use(express.json());
@@ -32,6 +35,10 @@ app.get("/createuser", (req, res) => {
   res.render("createUser");
 });
 
+app.get("/products", (req, res) => {
+  res.render("products");
+});
+
 app.post("/login/check", (req, res) => {
   // console.log(req.body)
 });
@@ -40,18 +47,30 @@ app.post("/profilecreate", async (req, res) => {
   try {
     await mongoose.connect(url);
     console.log("connected successfully..");
-
-    let result =await userModel.create({
-      name,
-      age,
-      email,
-      password,
-    });
-    res.send(result);
   } catch (err) {
     console.log("not connected..");
   }
- 
+
+  bcrypt.genSalt(12, function (err, salt) {
+    bcrypt.hash(password, salt, async function (err, hash) {
+      let result = await userModel.create({
+        name,
+        age,
+        email,
+        password: hash,
+      });
+    });
+  });
+
+  //jwt token set
+  let token = jwt.sign({ email: email }, "secrect");
+  res.cookie("token", token);
+  res.redirect("/");
+});
+
+app.get("/logout", (req, res) => {
+  res.cookie("token", "");
+  res.send("logout");
 });
 
 app.listen(3000, () => {

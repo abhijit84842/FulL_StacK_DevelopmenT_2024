@@ -8,6 +8,7 @@ const userModel = require("./models/usermodel");
 
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
+const usermodel = require("./models/usermodel");
 
 const app = express();
 
@@ -39,8 +40,33 @@ app.get("/products", (req, res) => {
   res.render("products");
 });
 
-app.post("/login/check", (req, res) => {
-  // console.log(req.body)
+app.post("/login/check", async(req, res) => {
+  try{
+    await mongoose.connect(url)
+    console.log("connected..")
+  }catch(err){
+    console.log("not connected")
+  }
+
+  let user= await userModel.findOne({email:req.body.email})
+  if(!user){
+    return res.send("user not found..")
+  }
+
+  // Load hash from your password DB.
+bcrypt.compare(req.body.password, user.password, function(err, result) {
+  
+  if(result){
+    let token= jwt.sign({email:req.body.email} , "secrect")
+    res.cookie("token" ,token)
+    res.redirect("/products")
+  }
+  else{
+    return res.send("incorrect password")
+  }
+});
+
+
 });
 app.post("/profilecreate", async (req, res) => {
   let { name, age, email, password } = req.body;

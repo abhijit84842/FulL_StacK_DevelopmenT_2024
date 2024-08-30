@@ -9,5 +9,5 @@ export function middleware(request){
 
 // See "Matching Paths" below 
 export const config = {
-    matcher: ['/about/:path*' ,'/study/:path*'],        // use can use multiple path here to make this type of array
+    matcher: ['/about/:path*' ,'/study/:path*'],        // we can use multiple path here to make this type of array
   }

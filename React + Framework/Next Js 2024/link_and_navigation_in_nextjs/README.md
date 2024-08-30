@@ -1,4 +1,10 @@
-<h1>Link AND Navigation In Next Js</h1>
+<h1>Covered Common Layout</h1>
+
+<h1>Covered Conditional Layout</h1>
+
+<h1>Covered Nested Routing</h1>
+
+<h2>Link AND Navigation In Next Js</h2>
 
 // Link -> Server Component
 

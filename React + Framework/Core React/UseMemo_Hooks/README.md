@@ -1,6 +1,14 @@
-<h1>Stop Unnecessary Rendering Using useMemo Hooks in React</h1>
 
-<p>useMemo() => <span>To avoid the unnecessary rendering and increase the performance the react app </span> </p>
+# useMemo Hooks In React
+useMemo Hooks => It is used to apply Memoization in React and stop the unnecessary rendering of function.
 
-<h2>Make a Counter app</h2>
-<h3>Apply Tailwind Css for Design</h3>
+What is Memoization => Memoization is a technique to improving the performation odf the code.
+
+
+
+
+
+## Authors
+
+- [Abhijit Das](#)
+

@@ -1,15 +1,16 @@
 import React, { useMemo, useState } from "react";
 
 const App = () => {
-  const [number, setNumber] = useState(0);
+  const [count, setCount] = useState(0);
   const [item, setItem] = useState(10);
 
   const multiCountMemo = useMemo(
+    // like a expensive function
     function multiCount() {
       console.warn("Multicount function called..");
-      return number * 5;
+      return count * 5;
     },
-    [number] // when number will update then this function will be called not other other time
+    [count] // when number will update then this function will be called not other other time
   );
   return (
     <div>
@@ -19,11 +20,13 @@ const App = () => {
 
       <div className="border-2 border-red-500 flex justify-center  mt-20 mx-20 p-5 ">
         <div className="w-[50%]  flex justify-center items-center flex-col border-2 border-green-500 p-5">
-          <p className="my-10">Counter Number is = {number}</p>
+          <p className="my-10">Counter Number is = {count}</p>
+
           {multiCountMemo}
+
           <button
             className="bg-red-500 p-2 mt-10 rounded-md"
-            onClick={() => setNumber(number + 1)}
+            onClick={() => setCount(count + 1)}
           >
             Counter
           </button>

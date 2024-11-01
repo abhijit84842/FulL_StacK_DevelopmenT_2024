@@ -1,55 +1,70 @@
-body{
-    background-color: black;
+body {
+  background-color: black;
 }
-h1{
-    display: flex;
-    justify-content: center;
-    
-    color: aliceblue;
-}
-.box{
-    background-color: red;
-    width: 300px;
-    height: 300px;
-    position: absolute;
 
-    /*apply animation in box */
-    animation-name: move;
-    animation-duration: 2s;
-    animation-delay: 1s;
-    animation-fill-mode: forwards;
+.box {
+  background-color: red;
+  width: 300px;
+  height: 300px;
+  margin-top: 50px;
+  margin-bottom: 10px;
+  position: absolute;
 
+  /*apply animation in box */
+  animation-name: move;
+  animation-duration: 2s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
 
-    /* how many time animation will run */
-    /* animation-iteration-count: 3;  */
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+  /* how many time animation will run */
+  /* animation-iteration-count: 3;  */
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 
-    /* timing function */
-    animation-timing-function: ease-in;
-
+  /* timing function */
+  animation-timing-function: ease-in;
 }
 
 /* create animation */
 @keyframes move {
-0%{
-left: 0;
-/* top: 0; */
-background-color: red;
-}
+  0% {
+    left: 0;
+    /* top: 0; */
+    background-color: red;
+  }
 
-/* 50%{
+  /* 50%{
     top: 0;
     left: 70%;
     background-color: green;
 
 } */
 
-100%{
-left: 70%;
-/* top: 50%; */
-background-color: blue;
-}
-    
+  100% {
+    left: 70%;
+    /* top: 50%; */
+    background-color: blue;
+  }
 }
 
+
+
+/* CSS Animation After and Before */
+h1 {
+    display: flex;
+    justify-content: center;
+  
+    color: aliceblue;
+  }
+  
+/* virtual content */
+/* peseudo element */ 
+h1::after{
+    content:' After content';
+    color: red;
+    
+}
+h1::before{
+    content: 'hi ';
+    color: blue;
+}

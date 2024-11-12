@@ -22,3 +22,13 @@ gsap.from("#box",{
     borderRadius: "50%",
     scale: 0.5,
 })
+
+// Animate the h1 tag
+gsap.from("h1",{
+    y:100,
+    delay:1,
+    duration:2,
+    opacity:0,
+    stagger:1   // coming one by one h1 tag
+    
+})

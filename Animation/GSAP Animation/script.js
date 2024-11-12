@@ -32,3 +32,16 @@ gsap.from("h1",{
     stagger:1   // coming one by one h1 tag
     
 })
+
+// Circle Animate
+gsap.to(".circle",{
+    x:1500,
+    backgroundColor:"green",
+    duration: 3,
+    delay:1,
+    borderRadius:"10px",
+    // repeat:1 ,      // repeat property(bydefault 1 time repeat + extra 1 time repeat)
+    repeat:-1,           // repeat infinite time
+    yoyo: true
+
+})

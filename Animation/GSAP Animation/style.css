@@ -1,12 +1,21 @@
-body{
-    background-color: rgb(24, 26, 27);
+body {
+  background-color: rgb(24, 26, 27);
 }
-.box{
-    background-color: red;
-    width: 200px;
-    height: 200px;
 
+h1 {
+  color: white;
 }
-h1{
-    color: white;
+
+.box {
+  background-color: red;
+  width: 200px;
+  height: 200px;
+}
+
+.circle{
+    margin-top: 20px;
+    background-color: aqua;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
 }

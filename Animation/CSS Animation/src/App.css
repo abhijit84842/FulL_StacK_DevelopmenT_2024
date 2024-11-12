@@ -12,17 +12,17 @@ body {
 
   /*apply animation in box */
   animation-name: move;
-  animation-duration: 2s;
+  animation-duration: 5s;
   animation-delay: 1s;
-  animation-fill-mode: forwards;
+ animation-fill-mode: forwards;
 
   /* how many time animation will run */
   /* animation-iteration-count: 3;  */
   animation-iteration-count: infinite;
-  animation-direction: alternate;
+animation-direction: alternate;
 
   /* timing function */
-  animation-timing-function: ease-in;
+animation-timing-function: ease;
 }
 
 /* create animation */
@@ -68,3 +68,5 @@ h1::before{
     content: 'hi ';
     color: blue;
 }
+
+/* GSAP(GreenSock Animation Platform) */

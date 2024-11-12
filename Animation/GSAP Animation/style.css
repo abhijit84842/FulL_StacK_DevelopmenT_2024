@@ -19,3 +19,30 @@ h1 {
     height: 150px;
     border-radius: 50%;
 }
+
+/* GSAP Time line box */
+.gsap-timeline{
+    margin-top: 20px;
+}
+
+#box1{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(70, 246, 88);
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+#box2{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(246, 211, 70);
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+#box3{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(217, 52, 204);
+    border-radius: 10px;
+    margin-bottom: 10px;
+}

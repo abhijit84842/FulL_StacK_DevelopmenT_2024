@@ -12,6 +12,14 @@ gsap.from(".page2 .box2" , {
     rotate:-360,
     duration:5,
     borderRadius: "50%",
+
+    // ScrollTrigger Apply
+    scrollTrigger:{
+        trigger: ".page2 .box2",
+        scroller:'body',
+        // markers:true,
+        // start: "top 50%"
+    }
 })
 
 gsap.from(".page3 .box3", {

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Locomotive Css CDN-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Locomovite JS</title>
+  </head>
+  <body>
+    <div id="main-wrapper" data-scroll-container>
+      <div id="page1" data-scroll>Page 1</div>
+      <div id="page2" data-scroll>
+        Page 2
+        <div class="box" id="box1" data-scroll></div>
+        <div
+          class="box"
+          id="box2"
+          data-scroll
+          data-scroll-speed="10"
+          data-scroll-direction="horizontal"
+        ></div>
+        <div class="box" id="box3" data-scroll></div>
+      </div>
+      <div id="page3" data-scroll>Page 3</div>
+    </div>
+
+    <!-- Locomotive js CDN-->
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

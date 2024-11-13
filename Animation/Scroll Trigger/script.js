@@ -17,8 +17,11 @@ gsap.from(".page2 .box2" , {
     scrollTrigger:{
         trigger: ".page2 .box2",
         scroller:'body',
-        // markers:true,
-        // start: "top 50%"
+
+        markers:true,
+        start: "top 50%",
+        end: "top 20%",
+        scrub:5  //rollback the animation
     }
 })
 

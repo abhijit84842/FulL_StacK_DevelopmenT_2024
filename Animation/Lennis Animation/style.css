@@ -1,9 +1,41 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
+
 
 body{
     background-color: rgb(19, 31, 42);
+}
+
+.page1{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(29, 65, 96);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    font-weight: 800;
+    color: aliceblue;
+}
+
+.page2{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(26, 85, 67);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    font-weight: 800;
+    color: aliceblue;
+}
+
+.page3{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(44, 50, 55);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    font-weight: 800;
+    color: aliceblue;
 }

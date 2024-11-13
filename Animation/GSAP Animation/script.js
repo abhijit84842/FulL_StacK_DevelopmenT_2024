@@ -48,7 +48,7 @@ gsap.to(".circle",{
 
 // GSAP Time line
 
-var t1 = gsap.timeline()        // make the animation synchronouslly
+var t1 = gsap.timeline()        // make the animation synchronously
 
 t1.to("#box1", {
     x:1200,

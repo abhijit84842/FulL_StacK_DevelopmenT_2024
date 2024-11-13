@@ -20,7 +20,7 @@ gsap.from(".page2 .box2" , {
 
         markers:true,
         start: "top 50%",
-        end: "top 20%",
+        end: "top 30%",
         scrub:5  //rollback the animation
     }
 })
@@ -29,6 +29,15 @@ gsap.from(".page3 .box3", {
     scale:0,
     duration:5,
     rotate:5,
-    borderRadius:"50%"
+    borderRadius:"50%",
+    scrollTrigger:{
+        trigger:".page3 .box3",
+        markers:true,
+        start:"top 95%",
+        end: "top 70%",
+        scrub:5,
+        // pin:true,
+    }
+    
 
 })

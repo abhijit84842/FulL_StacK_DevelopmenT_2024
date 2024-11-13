@@ -1,0 +1,30 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+   width: 100%;
+   height: 100%;
+
+}
+
+.page1{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(115, 205, 205);
+}
+
+.page2{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(12, 36, 36);
+}
+
+.page3{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(190, 231, 231);
+}

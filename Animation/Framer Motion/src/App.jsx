@@ -6,6 +6,15 @@ function App() {
       <motion.div
         // we can also drag the box
         drag
+        // make drag boundary
+        dragConstraints={{
+          top: 0,
+          left: 0,
+          right: 1000,
+          button: 300,
+        }}
+        // Lock the drag direction
+        dragDirectionLock="true"
         initial={{
           x: 300,
         }}

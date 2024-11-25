@@ -4,6 +4,8 @@ function App() {
   return (
     <>
       <motion.div
+        // we can also drag the box
+        drag
         initial={{
           x: 300,
         }}

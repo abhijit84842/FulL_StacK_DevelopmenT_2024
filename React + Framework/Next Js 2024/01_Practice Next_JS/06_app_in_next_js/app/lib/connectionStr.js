@@ -1,0 +1,1 @@
+export const url ="mongodb+srv://productNextJs:admin@cluster0.l4vqt9f.mongodb.net/Product-Next-js-Practice?retryWrites=true&w=majority&appName=Cluster0"

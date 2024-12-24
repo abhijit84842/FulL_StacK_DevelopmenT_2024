@@ -1,6 +1,6 @@
 const { default: mongoose } = require("mongoose");
 
-const userSchema = new mongoose.Schema({
+const userModel = new mongoose.Schema({
     name:String,
     age:Number,
     email:String,
@@ -10,4 +10,4 @@ const userSchema = new mongoose.Schema({
 
 })
 
-export const User = mongoose.models || mongoose.model("users",userSchema) // table name and schema
+export const User = mongoose.models.users || mongoose.model("users",userModel) // table name and schema

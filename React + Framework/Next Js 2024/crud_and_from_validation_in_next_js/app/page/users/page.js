@@ -5,7 +5,7 @@ import React from "react";
 const page = () => {
   return (
     <div>
-      <h1 className="flex justify-center  mt-20 text-5xl">
+      <h1 className="flex justify-center  mt-20 text-5xl text-white">
         All Users Details Here
       </h1>
       <div className="flex  flex-col items-center gap-10 text-2xl mt-20">

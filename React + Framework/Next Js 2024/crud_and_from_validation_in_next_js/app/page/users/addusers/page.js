@@ -127,9 +127,9 @@ const page = () => {
           <br />
           <br />
           {submitButton ? (
-            <button type="submit">Submit</button>
+            <button className="bg-green-500 rounded-md p-2 text-2xl w-44" type="submit">Submit</button>
           ) : (
-            <button disabled={true}>Submitted Successfully</button>
+            <button className="bg-red-500 rounded-md p-3 text-2xl brightness-75" disabled={true}>Submitted Successfully</button>
           )}
         </form>
       </div>

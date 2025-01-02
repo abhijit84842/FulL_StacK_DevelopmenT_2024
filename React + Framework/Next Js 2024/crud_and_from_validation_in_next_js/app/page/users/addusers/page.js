@@ -80,6 +80,17 @@ const page = () => {
           {errors.email && <p>{errors.email.message}</p>}
           <br />
           <br />
+          <input type="password" {...register("password" , {
+            minLength:{
+              value: 8,
+              message:"Password length must be 8 character"
+            },
+            pattern:{
+              value: /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/,
+              message: "Password must include at least one letter, one number, and one special character.",
+            }
+          })} />
+          {errors.password && <p>{errors.password.message}</p>}
           <input
             type="number"
             placeholder="enter ph no"

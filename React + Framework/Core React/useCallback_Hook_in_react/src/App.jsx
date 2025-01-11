@@ -8,7 +8,7 @@ const App = () => {
 
   const [adjective, setAdjective] = useState("Good");
 
-  // Freeze the function..
+  // Freeze the function..(Because when app is rendering that time it change itself automatically)
   const getAdjective = useCallback(() => {
     setAdjective("Best");
   }, []);
